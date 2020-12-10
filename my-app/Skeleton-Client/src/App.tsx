@@ -17,6 +17,9 @@ const makeBlankBlue6 = (): Blue6 => ({
     pointOfContact: "",
 });
 
+const createBlue6 = () => {
+    const [Blue6, setBlue6] = useState<Blue6>(makeBlankBlue6());
+}
 
 export const App = () => {
     return (
@@ -30,6 +33,35 @@ export const App = () => {
 
                 </header>
             </div>
+            {/*return (*/}
+            {/*<>*/}
+            {/*    <TaskForm*/}
+            {/*        label="Add a Task to the Task List"*/}
+            {/*        task={task}*/}
+            {/*        onTaskChanged={setTask}*/}
+            {/*        assignableSoldiers={assignableSoldiers}*/}
+            {/*    />*/}
+
+            {/*    {task.subtasks.map((subtask, index) => (*/}
+            {/*        <div className="subtask-form-container" key={index}>*/}
+            {/*            <TaskForm*/}
+            {/*                label="Add a Sub-Task"*/}
+            {/*                task={task.subtasks[index]}*/}
+            {/*                onTaskChanged={changeSubtask(index)}*/}
+            {/*                assignableSoldiers={assignableSoldiers}*/}
+            {/*            />*/}
+            {/*        </div>*/}
+            {/*    ))}*/}
+
+            {/*    <div className="button-holder">*/}
+            {/*        <Button onClick={handleAddSubTaskClick}>Add Sub-Task</Button>*/}
+
+            {/*        <Button variant="completion" onClick={handleDoneClick} type="submit" disabled={!task.title}>*/}
+            {/*            Done*/}
+            {/*        </Button>*/}
+            {/*    </div>*/}
+            {/*</>*/}
+            );
         </>
     )
 }
