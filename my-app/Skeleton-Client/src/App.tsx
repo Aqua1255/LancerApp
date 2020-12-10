@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {Blue6} from "./Blue6API";
+import {Blue6} from "./Blue6Interfaces";
 import Logo from "./Logo.svg";
+import './index.css'
+import './App.css'
 
 
 const makeBlankBlue6 = (): Blue6 => ({
@@ -21,7 +23,7 @@ export const App = () => {
         <>
             <div className="App">
                 <header className="App-header">
-                    <h1>
+                    <h1 className="body">
                         Lancer Brigade Operations Center
                     </h1>
                     <img src={Logo} className="App-logo" alt="logo"/>
