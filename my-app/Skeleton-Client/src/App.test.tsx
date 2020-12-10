@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import SetUpProxy from './SetUp-Proxy';
+import React from "react";
+import {App} from "./App";
+
 //Tests the Main screen title and Lancer Logo
 test('Lancer Brigade Operations Center', () => {
-  render(<SetUpProxy/>);
+  render(<App/>);
   const linkElement = screen.getByText('Lancer Brigade Operations Center');
   expect(linkElement).toBeInTheDocument();
 });
@@ -19,9 +21,9 @@ describe('Blue 6 Creation Form', () => {
     expect(callSignInput).toBeVisible();
     expect(callSignInput).toHaveAttribute('placeholder', 'Unit & Call Sign');
 
-    let spDate = screen.getByLabelText('SP DTG');
-    expect(spDate).toBeVisible();
-    expect(spDate).toHaveAttribute('placeholder', 'SP DTG');
+    let spDateInput = screen.getByLabelText('SP DTG');
+    expect(spDateInput).toBeVisible();
+    expect(spDateInput).toHaveAttribute('placeholder', 'SP DTG');
 
     let rpInput = screen.getByLabelText('Estimated RP DTG')
     expect(rpInput).toBeVisible();
