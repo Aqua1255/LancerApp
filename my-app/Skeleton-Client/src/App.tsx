@@ -5,23 +5,29 @@ import './index.css'
 import './App.css'
 
 
-const makeBlankBlue6 = (): Blue6 => ({
-    reportingDate: "",
-    callSign: "",
-    spDate: "",
-    rp: "",
-    cpLocation: "",
-    eta: "",
-    siUp: "",
-    narrative: "",
-    pointOfContact: "",
-});
+// const makeBlankBlue6 = (): Blue6 => ({
+//     reportingDate: "",
+//     callSign: "",
+//     spDate: "",
+//     rp: "",
+//     cpLocation: "",
+//     eta: "",
+//     siUp: "",
+//     narrative: "",
+//     pointOfContact: "",
+// });
 
-const createBlue6 = () => {
-    const [Blue6, setBlue6] = useState<Blue6>(makeBlankBlue6());
-}
+// const createBlue6 = () => {
+//     const [Blue6, setBlue6] = useState<Blue6>(makeBlankBlue6());
+//}
 
 export const App = () => {
+
+const [inputText, setInputText] = useState<string>("")
+    console.log(inputText)
+    // console.log(setInputText(""))
+
+
     return (
         <>
             <div className="App">
@@ -31,37 +37,16 @@ export const App = () => {
                     </h1>
                     <img src={Logo} className="App-logo" alt="logo"/>
 
+                    <label>
+                        Reporting DTG
+                        <input value = {inputText} onChange={(event) => {
+                            setInputText(event.target.value)
+                        }} />
+                    </label>
+
+                    <button onClick={() => alert(inputText)}>submit</button>
                 </header>
             </div>
-            {/*return (*/}
-            {/*<>*/}
-            {/*    <TaskForm*/}
-            {/*        label="Add a Task to the Task List"*/}
-            {/*        task={task}*/}
-            {/*        onTaskChanged={setTask}*/}
-            {/*        assignableSoldiers={assignableSoldiers}*/}
-            {/*    />*/}
-
-            {/*    {task.subtasks.map((subtask, index) => (*/}
-            {/*        <div className="subtask-form-container" key={index}>*/}
-            {/*            <TaskForm*/}
-            {/*                label="Add a Sub-Task"*/}
-            {/*                task={task.subtasks[index]}*/}
-            {/*                onTaskChanged={changeSubtask(index)}*/}
-            {/*                assignableSoldiers={assignableSoldiers}*/}
-            {/*            />*/}
-            {/*        </div>*/}
-            {/*    ))}*/}
-
-            {/*    <div className="button-holder">*/}
-            {/*        <Button onClick={handleAddSubTaskClick}>Add Sub-Task</Button>*/}
-
-            {/*        <Button variant="completion" onClick={handleDoneClick} type="submit" disabled={!task.title}>*/}
-            {/*            Done*/}
-            {/*        </Button>*/}
-            {/*    </div>*/}
-            {/*</>*/}
-            );
         </>
     )
 }
