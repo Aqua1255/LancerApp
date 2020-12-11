@@ -10,42 +10,47 @@ test('Lancer Brigade Operations Center', () => {
 });
 
 //Tests the Blue 6 Report Creation Form
-describe('Blue 6 Creation Form', () => {
-  it('fields are visible and accessible', async () => {
-
-    let reportingDateInput = screen.getByLabelText('Reporting DTG');
+describe('Blue 6 Reporting fields are present and accessible', () => {
+  render(<App/>);
+  it('Reporting fields are visible and accessible', async () => {
+    let reportingDateInput = screen.getByLabelText('Reporting Date Time Group:');
     expect(reportingDateInput).toBeVisible();
-    expect(reportingDateInput).toHaveAttribute('placeholder', 'Reporting DTG (Required)');
-
-    let callSignInput = screen.getByLabelText('Unit & Call Sign');
+    let callSignInput = screen.getByLabelText('Unit & Call Sign:');
     expect(callSignInput).toBeVisible();
-    expect(callSignInput).toHaveAttribute('placeholder', 'Unit & Call Sign');
-
-    let spDateInput = screen.getByLabelText('SP DTG');
+    let spDateInput = screen.getByLabelText('SP Date Time Group:');
     expect(spDateInput).toBeVisible();
-    expect(spDateInput).toHaveAttribute('placeholder', 'SP DTG');
-
-    let rpInput = screen.getByLabelText('Estimated RP DTG')
+    let rpInput = screen.getByLabelText('Estimated RP Date Time Group:')
     expect(rpInput).toBeVisible();
-    expect(rpInput).toHaveAttribute('placeholder', 'Estimated RP DTG');
-
-    let locInput = screen.getByLabelText('Command Post LOC')
+    let locInput = screen.getByLabelText('Command Post Location:')
     expect(locInput).toBeVisible();
-    expect(locInput).toHaveAttribute('placeholder', 'Command Post LOC');
-
-    let etaInput = screen.getByLabelText('ETA to Continue Operations')
+    let etaInput = screen.getByLabelText('ETA to Continue Operations:')
     expect(etaInput).toBeVisible();
-    expect(etaInput).toHaveAttribute('placeholder', 'ETA to Continue Operations');
-
-    let siInput = screen.getByLabelText('Sensitive Items Status')
+    let siInput = screen.getByLabelText('Sensitive Items Status:')
     expect(siInput).toBeVisible();
-    expect(siInput).toHaveAttribute('placeholder', 'Sensitive Items Status');
-
-    let narInput = screen.getByLabelText('Concise Narrative')
+    let narInput = screen.getByLabelText('One Sentence Narrative:')
     expect(narInput).toBeVisible();
-    expect(narInput).toHaveAttribute('placeholder', 'Concise Narrative');
-
-    let pocInput = screen.getByLabelText('Contact Name and Phone #')
+    let pocInput = screen.getByLabelText('Contact Name and Phone #:')
     expect(pocInput).toBeVisible();
-    expect(pocInput).toHaveAttribute('placeholder', 'Contact Name and Phone #');
-  })});
+})});
+
+    //
+    //
+    //
+    //
+    //
+
+    //
+    //
+
+    //
+    //
+
+    //
+    //
+
+    //
+    //
+
+    //
+
+
