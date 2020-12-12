@@ -22,10 +22,18 @@ import './App.css'
 //}
 
 export const App = () => {
-
+// Hooks for form submissions
 const [reportingDateInputText, reportingDateSetInputText] = useState<string>("")
-    // console.log(reportingDateInputText)
-    // console.log(reportingDateSetInputText(""))
+const [callSignInputText, callSignSetInputText] = useState<string>("")
+const [spInputText, spSetInputText] = useState<string>("")
+const [rpInputText, rpSetInputText] = useState<string>("")
+const [cpInputText, cpSetInputText] = useState<string>("")
+const [etaInputText, etaSetInputText] = useState<string>("")
+const [sensitiveInputText, sensitiveSetInputText] = useState<string>("")
+const [narInputText, narSetInputText] = useState<string>("")
+const [contactInputText, contactSetInputText] = useState<string>("")
+
+
 
 
     return (
@@ -45,38 +53,57 @@ const [reportingDateInputText, reportingDateSetInputText] = useState<string>("")
                     </label>
                     <label>
                         Unit & Call Sign:
-                        <input/>
+                        <input value = {callSignInputText} onChange={(event) => {
+                            callSignSetInputText(event.target.value)
+                        }}/>
                     </label>
                     <label>
                         SP Date Time Group:
-                        <input/>
+                        <input value = {spInputText} onChange={(event ) => {
+                            spSetInputText(event.target.value)
+                        }}/>
                     </label>
                     <label>
                         Estimated RP Date Time Group:
-                        <input/>
+                        <input value = {rpInputText} onChange={(event ) => {
+                            rpSetInputText(event.target.value)
+                        }}/>
                     </label>
                     <label>
                         Command Post Location:
-                        <input/>
+                        <input value = {cpInputText} onChange={(event ) => {
+                            cpSetInputText(event.target.value)
+                        }}/>
                     </label>
                     <label>
                         ETA to Continue Operations:
-                        <input/>
+                        <input value = {etaInputText} onChange={(event ) => {
+                            etaSetInputText(event.target.value)
+                        }}/>
                     </label>
                     <label>
                         Sensitive Items Status:
-                        <input/>
+                        <input value = {sensitiveInputText} onChange={(event ) => {
+                            sensitiveSetInputText(event.target.value)
+                        }}/>
                     </label>
                     <label>
                         One Sentence Narrative:
-                        <input/>
+                        <input value = {narInputText} onChange={(event ) => {
+                            narSetInputText(event.target.value)
+                        }}/>
                     </label>
                     <label>
                         Contact Name and Phone #:
-                        <input/>
+                        <input value = {contactInputText} onChange={(event ) => {
+                            contactSetInputText(event.target.value)
+                        }}/>
                     </label>
 
-                    <button onClick={() => alert(reportingDateInputText)}>submit</button>
+                    <button onClick={() => alert(reportingDateInputText + callSignInputText + spInputText
+                        + rpInputText + cpInputText + etaInputText + sensitiveInputText + narInputText +
+                        contactInputText)
+                    }>check in</button>
                 </header>
             </div>
         </>

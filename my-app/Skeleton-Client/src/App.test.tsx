@@ -3,16 +3,19 @@ import React from "react";
 import {App} from "./App";
 
 //Tests the Main screen title and Lancer Logo
-test('Lancer Brigade Operations Center', () => {
-  render(<App/>);
-  const linkElement = screen.getByText('Lancer Brigade Operations Center');
-  expect(linkElement).toBeInTheDocument();
-});
+
 
 //Tests the Blue 6 Report Creation Form
-describe('Blue 6 Reporting fields are present and accessible', () => {
-  render(<App/>);
-  it('Reporting fields are visible and accessible', async () => {
+describe('All Needed Labels and Forms are Visible ', () => {
+
+  test('Lancer Brigade Operations Center', () => {
+    render(<App/>);
+    screen.debug()
+    const linkElement = screen.getByText('Lancer Brigade Operations Center');
+    expect(linkElement).toBeInTheDocument();
+  });
+  it('Check-in fields are visible and accessible', async () => {
+    render(<App/>);
     let reportingDateInput = screen.getByLabelText('Reporting Date Time Group:');
     expect(reportingDateInput).toBeVisible();
     let callSignInput = screen.getByLabelText('Unit & Call Sign:');
@@ -33,24 +36,6 @@ describe('Blue 6 Reporting fields are present and accessible', () => {
     expect(pocInput).toBeVisible();
 })});
 
-    //
-    //
-    //
-    //
-    //
 
-    //
-    //
-
-    //
-    //
-
-    //
-    //
-
-    //
-    //
-
-    //
 
 
