@@ -36,6 +36,25 @@ describe('All Needed Labels and Forms are Visible ', () => {
     expect(pocInput).toBeVisible();
 })});
 
+//Tests Blue 7 Movement Closure Report
+describe('All Needed Labels and Forms are Visible ', () => {
+  it('Check-out fields are visible and accessible', async () => {
+    render(<App/>);
+    let checkOutReportingDateInput = screen.getByLabelText('Reporting Date Time Group:');
+    expect(checkOutReportingDateInput).toBeVisible();
+    let checkOutCallSignInput = screen.getByLabelText('Unit & Call Sign:');
+    expect(checkOutCallSignInput).toBeVisible();
+    let checkOutRpDateInput = screen.getByLabelText('RP Date Time Group:');
+    expect(checkOutRpDateInput).toBeVisible();
+    let checkOutLocInput = screen.getByLabelText('Command Post Location:')
+    expect(checkOutLocInput).toBeVisible();
+    let accidentInput = screen.getByLabelText('Accidents or SIGACTs:')
+    expect(accidentInput).toBeVisible();
+    let checkoutEtaInput = screen.getByLabelText('ETA to Continue Operations:')
+    expect(checkoutEtaInput).toBeVisible();
+    let checkOutSiInput = screen.getByLabelText(`Sensitive Items Status:`)
+    expect(checkOutSiInput).toBeVisible();
 
+})})
 
 
