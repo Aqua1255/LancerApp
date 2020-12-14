@@ -38,7 +38,7 @@ export const App = () => {
 
     return (
 
-            <div className="container">
+            <div className= "background">
                 <header className="App-header">
                     <h1 className="body">
                         Lancer Brigade Operations Center
@@ -128,35 +128,47 @@ export const App = () => {
                 <form>
                     <div>
                         <label className="label-row">
-                            Reporting Date Time Group:
-                            <input/>
-                        </label>
+                        Reporting Date Time Group:
+                        <input/>
+                    </label>
+                    </div>
+                    <div>
                         <label className="label-row">
-                            Unit & Call Sign
-                            <input/>
-                        </label>
+                        Unit & Call Sign
+                        <input/>
+                    </label>
+                    </div>
+                    <div>
                         <label className="label-row">
-                            RP Date Time Group
-                            <input/>
-                        </label>
+                        RP Date Time Group
+                        <input/>
+                    </label>
+                    </div>
+                    <div>
                         <label className="label-row">
-                            Command Post Location
-                            <input/>
-                        </label>
+                        Command Post Location
+                        <input/>
+                    </label>
+                    </div>
+                    <div><label className="label-row">
+                        Accidents or SIGACTs
+                        <input/>
+                    </label>
+                    </div>
+                    <div>
                         <label className="label-row">
-                            Accidents or SIGACTs
-                            <input/>
-                        </label>
+                        ETA to Continue Operations
+                        <input/>
+                    </label>
+                    </div>
+                    <div>
                         <label className="label-row">
-                            ETA to Continue Operations
-                            <input/>
-                        </label>
-                        <label className="label-row">
-                            Sensitive Item Status
-                            <input/>
-                        </label>
-
+                        Sensitive Item Status
+                        <input/>
+                    </label>
                     </div>
                 </form>
+                <button>check out
+                </button>
         </div>
     )}
