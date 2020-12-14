@@ -10,6 +10,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  padding-top: 15px;
 }
 
 /*@media (prefers-reduced-motion: no-preference) {*/
@@ -18,7 +19,7 @@
 /*  }*/
 /*}*/
 
-.container {
+.background-container {
   border-radius: 5px;
   background-color: #282c34;
   padding: 20px;
@@ -29,6 +30,13 @@
 
 }
 
+.form-container{
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  padding-top: 15px;
+
+}
 .App-header {
   background-color: #282c34;
   /*min-height: 50vh;*/
@@ -44,6 +52,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.checkButton-styling{
+  text-align: center;
 }
 
 
