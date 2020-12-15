@@ -6,7 +6,7 @@ import {App} from "./App";
 
 
 //Tests the Blue 6 Report Creation Form
-describe('All Needed Labels and Forms are Visible ', () => {
+describe('All Needed Labels and Forms are Visible for Blue 6', () => {
 
   test('Lancer Brigade Operations Center', () => {
     render(<App/>);
@@ -37,10 +37,10 @@ describe('All Needed Labels and Forms are Visible ', () => {
 })});
 
 //Tests Blue 7 Movement Closure Report
-describe('All Needed Labels and Forms are Visible ', () => {
+describe('All Needed Labels and Forms are Visible for Blue 7', () => {
   it('Check-out fields are visible and accessible', async () => {
     render(<App/>);
-    let checkOutReportingDateInput = screen.getByLabelText('Reporting Date Time Group:');
+    let checkOutReportingDateInput = screen.getByLabelText('Reporting Date Time Group:');//Need to find a better option for this query. Causes problems above as well)
     expect(checkOutReportingDateInput).toBeVisible();
     let checkOutCallSignInput = screen.getByLabelText('Unit & Call Sign:');
     expect(checkOutCallSignInput).toBeVisible();
