@@ -13,6 +13,9 @@ export const Blue7 = () => {
 
     return (
         <form>
+            <h1 className="body">
+                Complete Your Blue 7 Below:
+            </h1>
         <div>
             <label className="label-row">
                 Reporting Date Time Group:
@@ -53,7 +56,7 @@ export const Blue7 = () => {
         <div className="checkButton-styling">
             <button onClick={() => alert(checkOutReportingDateInputText + checkOutCallSignInputText + checkOutRpDateInputText
                 + checkOutLocInputText + accidentInputText + checkOutEtaInputText + checkOutSiInputText)
-            }>check out</button>
+            }>submit</button>
         </div>
     </form>
 

@@ -30,6 +30,7 @@
 
 }
 
+
 .form-container{
   display: flex;
   justify-content: center;
@@ -57,7 +58,6 @@
 .checkButton-styling{
   text-align: center;
 }
-
 
  /*Style label and input interaction */
 .label-row {

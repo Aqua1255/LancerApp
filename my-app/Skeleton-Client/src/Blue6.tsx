@@ -15,6 +15,9 @@ export const Blue6 = () => {
 
     return (
     <form>
+        <h1 className="body">
+            Complete Your Blue 6 Below:
+        </h1>
         <div>
             <label className="label-row">
                 Reporting Date Time Group:
@@ -94,9 +97,9 @@ export const Blue6 = () => {
                 alert(reportingDateInputText + callSignInputText + spInputText
                     + rpInputText + cpInputText + etaInputText + sensitiveInputText + narInputText +
                     contactInputText)
-
-            }>check in
+            }>submit
             </button>
+
         </div>
     </form>
     )}
