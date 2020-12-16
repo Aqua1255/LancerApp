@@ -89,9 +89,12 @@ export const Blue6 = () => {
             </label>
         </div>
         <div className="checkButton-styling">
-            <button onClick={() => alert(reportingDateInputText + callSignInputText + spInputText
-                + rpInputText + cpInputText + etaInputText + sensitiveInputText + narInputText +
-                contactInputText)
+            <button type="submit" onClick={()=>
+                // e.preventDefault();
+                alert(reportingDateInputText + callSignInputText + spInputText
+                    + rpInputText + cpInputText + etaInputText + sensitiveInputText + narInputText +
+                    contactInputText)
+
             }>check in
             </button>
         </div>
