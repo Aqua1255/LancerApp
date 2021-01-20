@@ -1,0 +1,8 @@
+---
+applications:
+  - name: Lancer-App-Backend-2
+  - path: build/libs/Lancer-App-Backend-2-0.0.1-SNAPSHOT.jar
+services:
+  - compose-for-postgresql-service
+#env:
+#  SPRING_PROFILES_ACTIVE: cloud,dev
