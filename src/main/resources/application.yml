@@ -1,0 +1,43 @@
+spring:
+  data:
+    rest:
+      base-path: /api
+  datasource:
+    url: 
+    driver-class-name: org.h2.Driver
+    username:
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  # Testing with Postgres
+  #  datasource:
+  #    url: jdbc:postgresql://localhost:5432/todo
+  #    username: todo
+  #    password: todo
+  #    driver-class-name: org.postgresql.Driver
+  #  jpa:
+  #    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  session:
+    store-type: jdbc
+    jdbc:
+      initialize-schema: never
+  flyway:
+    locations: classpath:/db/migration
+    ignore-missing-migrations: false
+    out-of-order: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+---
+spring:
+  profiles: default
+info:
+  auth-type: dev-like
+---
+spring:
+  profiles: cloud
+info:
+  auth-type: prod-like
