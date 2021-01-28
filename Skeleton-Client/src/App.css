@@ -22,11 +22,13 @@
 .background-container {
   border-radius: 5px;
   background-color: #282c34;
-  padding: 20px;
+  /*padding: 20px;*/
   color: white;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+
 
 }
 
@@ -36,6 +38,7 @@
   justify-content: center;
   gap: 70px;
   padding-top: 15px;
+  width: 100%;
 
 }
 .App-header {
@@ -48,6 +51,7 @@
   justify-content: center;
   font-size: calc(7px + 2vmin);
   color: white;
+  width: 100%;
 }
 
 
@@ -70,7 +74,7 @@
   /*vertical-align: top;*/
 
   /* Uniform text field size */
-  width: 400px;
+  width: 100%;
   /*box-sizing: border-box;*/
 
   /* Match form field borders */

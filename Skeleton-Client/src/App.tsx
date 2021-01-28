@@ -1,11 +1,11 @@
 // @ts-ignore
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Logo from "./Logo.svg";
 import './index.css'
 import './App.css'
 import {Blue6} from "./Blue6";
 import {Blue7} from "./Blue7";
-import {Blue6Data, getBlue6s} from "./Blue6API";
+import {DisplayReportTable} from "./DisplayReportTable";
 
 
 
@@ -13,17 +13,8 @@ export const App = () => {
 
 //Hook for Blue6/Blue7 Input Selection
 const [reportSelection, setReportSelection] = useState<number>(0);
-const [displayReport, setDisplayReport] = useState<Blue6Data[]>([]);
 
-useEffect( () => {
-    getBlue6s()
-        .then((data) => {
-            setDisplayReport(data);
-        })
-        .catch(() => {
-            console.error('data transfer didnt work')
-        })
-},[]);
+
     return (
 
             <div className="background-container">
@@ -37,6 +28,7 @@ useEffect( () => {
                 <div className="form-container">
                     {reportSelection === 1 && <Blue6/>}
                     {reportSelection === 2 && <Blue7/>}
+
 
                     {/*{reportSelection === 1 ? <Blue6/> :reportSelection ===2 ? <Blue7/> : null}*/}
                     {/*<>*/}
@@ -56,8 +48,9 @@ useEffect( () => {
                     <button onClick={() => setReportSelection(0)} className="cancel-button">cancel</button>}
                 </div>
                 <div>
-                    {displayReport}
+                    <DisplayReportTable/>
                 </div>
+
 
         </div>
 

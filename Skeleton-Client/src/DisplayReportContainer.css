@@ -1,0 +1,24 @@
+table{
+    font: 1em sans-serif;
+    border-collapse: collapse;
+    width: 200px;
+
+}
+.overflow{
+    width: 200px;
+    overflow-x:scroll;
+}
+td,th{
+    font: 1em sans-serif;
+    border: 1px solid #FF0000;
+    padding: 0.5rem;
+    text-align: left;
+
+}
+
+h2{
+    font: 1em sans-serif;
+    display: flex;
+    justify-content: center;
+
+}

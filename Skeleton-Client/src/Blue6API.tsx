@@ -2,7 +2,7 @@ import axios from 'axios';
 export const getBlue6s = async(): Promise<Blue6Data[]> => {
     try{console.log("did I make it")
         const response = await axios.get("/api/blue6s")
-        console.log(response)
+        console.log(response.data._embedded.blue6s)
          return response.data._embedded.blue6s;
 
     } catch (e) {
