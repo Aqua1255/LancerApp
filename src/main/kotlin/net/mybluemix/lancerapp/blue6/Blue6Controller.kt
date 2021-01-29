@@ -3,10 +3,11 @@ import org.springframework.web.bind.annotation.RequestMapping
 
 @Controller
 class HomeController {
-    @RequestMapping
+    @RequestMapping("/")
     class HomeController {
         fun index(): String {
             return "index"
         }
     }
 }
+

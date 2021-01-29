@@ -27,10 +27,10 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
-
-
+  text-align: center;
 }
+
+
 
 
 .form-container{
@@ -38,20 +38,18 @@
   justify-content: center;
   gap: 70px;
   padding-top: 15px;
-  width: 100%;
-
+  padding-left: 5px;
+  padding-right: 5px;
 }
+
 .App-header {
   background-color: #282c34;
   /*min-height: 50vh;*/
   display: flex;
   flex-direction: column;
-
   align-items: center;
-  justify-content: center;
   font-size: calc(7px + 2vmin);
   color: white;
-  width: 100%;
 }
 
 
@@ -67,6 +65,7 @@
 .label-row {
   padding: .5em;
   display: flex;
+  flex-flow: row wrap; /* default for flex-flow if not provided */
   justify-content: flex-end;
   /* To make sure that all text fields have the same font settings
      By default, textareas have a monospace font */
@@ -74,14 +73,17 @@
   /*vertical-align: top;*/
 
   /* Uniform text field size */
-  width: 100%;
   /*box-sizing: border-box;*/
 
   /* Match form field borders */
   border: 1px solid #FF0000;
-
 }
 
+@media screen and (max-width: 299px) {
+  .label-row {
+    flex-flow: column
+  }
+}
 
 @keyframes App-logo-spin {
   from {

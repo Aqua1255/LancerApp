@@ -3,11 +3,26 @@ table{
     border-collapse: collapse;
     width: 200px;
 
+
+
 }
 .overflow{
-    width: 200px;
+    width: 290px;
     overflow-x:scroll;
+    padding-bottom: 10px;
 }
+/* css  psuedoclass for making scrollbar visible"  for all scrollbars*/
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
 td,th{
     font: 1em sans-serif;
     border: 1px solid #FF0000;
@@ -21,4 +36,9 @@ h2{
     display: flex;
     justify-content: center;
 
+}
+
+.table-container{
+    display: flex;
+    justify-content: center;
 }

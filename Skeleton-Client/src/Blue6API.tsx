@@ -11,6 +11,20 @@ export const getBlue6s = async(): Promise<Blue6Data[]> => {
     }
 }
 
+//Send data to db
+
+export const sendBlue6s = async(blue6SentFormData: Blue6Data) => {
+    try {
+        console.log("did I make it")
+        await axios.post("/api/blue6s", blue6SentFormData)
+    } catch (e) {
+        console.log(e.message)
+        throw new Error(e.message)
+    }
+}
+
+
+
 
 export interface Blue6Data {
 

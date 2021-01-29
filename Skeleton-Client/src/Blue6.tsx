@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import './index.css'
 import './App.css'
+import {sendBlue6s} from "./Blue6API";
 
 export const Blue6 = () => {
     const [reportingDateInputText, reportingDateSetInputText] = useState<string>("")
@@ -13,9 +14,11 @@ export const Blue6 = () => {
     const [narInputText, narSetInputText] = useState<string>("")
     const [contactInputText, contactSetInputText] = useState<string>("")
 
+
+
     return (
     <form>
-        <h1 className="body">
+        <h1>
             Complete Your Blue 6 Below:
         </h1>
         <div>
@@ -92,12 +95,24 @@ export const Blue6 = () => {
             </label>
         </div>
         <div className="checkButton-styling">
-            <button type="submit" onClick={()=>
-                // e.preventDefault();
-                alert(reportingDateInputText + callSignInputText + spInputText
-                    + rpInputText + cpInputText + etaInputText + sensitiveInputText + narInputText +
-                    contactInputText)
-            }>submit
+            <button type="submit" onClick={(e)=> {
+                    // e.preventDefault();
+
+                const formData = {
+                    reportingDateInput : reportingDateInputText,
+                    callSignInput : callSignInputText,
+                    spDateInput : spInputText,
+                    rpInput : rpInputText,
+                    locInput : cpInputText,
+                    etaInput : etaInputText,
+                    siInput : sensitiveInputText,
+                    narInput : narInputText,
+                    pocInput: contactInputText
+                }
+                sendBlue6s(formData)
+
+            }}>
+                submit
             </button>
 
         </div>
