@@ -93,3 +93,8 @@
     transform: rotate(360deg);
   }
 }
+
+.display-table{
+  display: flex;
+  justify-content: center;
+}

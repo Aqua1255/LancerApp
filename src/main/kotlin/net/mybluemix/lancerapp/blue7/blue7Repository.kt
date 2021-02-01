@@ -1,4 +1,6 @@
 package net.mybluemix.lancerapp.blue7
 
-interface blue7Repository {
-}
+
+import org.springframework.data.repository.CrudRepository
+
+interface Blue7Repository : CrudRepository<Blue7?, Long?>

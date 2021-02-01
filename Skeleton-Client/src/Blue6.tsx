@@ -98,7 +98,7 @@ export const Blue6 = () => {
             <button type="submit" onClick={(e)=> {
                     // e.preventDefault();
 
-                const formData = {
+                const Blue6formData = {
                     reportingDateInput : reportingDateInputText,
                     callSignInput : callSignInputText,
                     spDateInput : spInputText,
@@ -109,7 +109,7 @@ export const Blue6 = () => {
                     narInput : narInputText,
                     pocInput: contactInputText
                 }
-                sendBlue6s(formData)
+                sendBlue6s(Blue6formData)
 
             }}>
                 submit

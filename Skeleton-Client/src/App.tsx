@@ -48,7 +48,7 @@ export const App = () => {
             </div>
 
             {reportSelection === 0 && (
-                <div>
+                <div className="display-table">
                     <DisplayReportTable/>
                 </div>
             )

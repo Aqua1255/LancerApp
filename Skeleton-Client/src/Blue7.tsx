@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import './index.css'
 import './App.css'
+import {sendBlue7s} from "./Blue7API";
 
 export const Blue7 = () => {
     const[checkOutReportingDateInputText, checkOutReportingDateSetInputText] = useState<string>("")
@@ -54,8 +55,18 @@ export const Blue7 = () => {
             </label>
         </div>
         <div className="checkButton-styling">
-            <button onClick={() => alert(checkOutReportingDateInputText + checkOutCallSignInputText + checkOutRpDateInputText
-                + checkOutLocInputText + accidentInputText + checkOutEtaInputText + checkOutSiInputText)
+            <button type="submit" onClick={(e) => {
+                const Blue7formData = {
+                    checkOutReportingDateInput: checkOutReportingDateInputText,
+                    checkOutCallSignInput: checkOutCallSignInputText,
+                    checkOutRpDateInput: checkOutRpDateInputText,
+                    checkOutLocInput: checkOutLocInputText,
+                    accidentInput: accidentInputText,
+                    checkOutEtaInput: checkOutEtaInputText,
+                    checkOutSiInput: checkOutSiInputText,
+                }
+                sendBlue7s(Blue7formData)
+            }
             }>submit</button>
         </div>
     </form>
