@@ -66,6 +66,7 @@ export const Blue7 = () => {
                     checkOutSiInput: checkOutSiInputText,
                 }
                 sendBlue7s(Blue7formData)
+                window.location.reload()
             }
             }>submit</button>
         </div>

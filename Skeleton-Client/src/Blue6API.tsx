@@ -17,17 +17,26 @@ export const sendBlue6s = async(blue6SentFormData: Blue6Data) => {
     try {
         console.log("did I make it")
         await axios.post("/api/blue6s", blue6SentFormData)
+
     } catch (e) {
         console.log(e.message)
         throw new Error(e.message)
     }
 }
+export const deleteBlue6s = async(blue6Id:number) => {
+    try{
+        console.log("was blue6 deleted")
+        await axios.delete(`/api/blue6s/${blue6Id}`)
 
 
-
-
+    } catch(e){
+        console.log(e.message)
+        throw new Error(e.message)
+    }
+}
 export interface Blue6Data {
 
+    id?: number;
     reportingDateInput : string;
     callSignInput : string;
     spDateInput : string;

@@ -26,7 +26,9 @@ export const App = () => {
 
             <div className="form-container">
                 {reportSelection === 1 && <Blue6/>}
+
                 {reportSelection === 2 && <Blue7/>}
+
 
 
                 {/*{reportSelection === 1 ? <Blue6/> :reportSelection ===2 ? <Blue7/> : null}*/}

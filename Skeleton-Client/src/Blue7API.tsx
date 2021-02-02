@@ -21,7 +21,19 @@ export const sendBlue7s = async(blue7SentFormData: Blue7Data) => {
     }
 }
 
+export const deleteBlue7s = async(blue7Id:number) => {
+    try{
+        console.log("was blue7 deleted")
+        await axios.delete(`/api/blue7s/${blue7Id}`)
+
+    } catch(e){
+        console.log(e.message)
+        throw new Error(e.message)
+    }
+}
+
 export interface Blue7Data {
+    id?: number;
     checkOutReportingDateInput: string;
     checkOutCallSignInput: string;
     checkOutRpDateInput: string;

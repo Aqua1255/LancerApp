@@ -10,7 +10,7 @@ import javax.persistence.Id
 data class Blue7(
         @GeneratedValue(strategy = GenerationType.AUTO)
         @Id
-        val id: Long=0,
+        val Id: Long=0,
         val checkOutReportingDateInput: String = "",
         val checkOutCallSignInput: String = "",
         val checkOutRpDateInput: String = "",

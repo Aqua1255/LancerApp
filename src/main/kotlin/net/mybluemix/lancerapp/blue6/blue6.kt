@@ -10,7 +10,7 @@ import java.io.Serializable
 data class Blue6(
         @GeneratedValue(strategy = GenerationType.AUTO)
         @Id
-        val id: Long=0,
+        val Id: Long=0,
         val reportingDateInput: String = "",
         val callSignInput: String = "",
         val spDateInput: String = "",

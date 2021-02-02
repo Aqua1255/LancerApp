@@ -1,12 +1,16 @@
 import React, {useEffect, useState} from "react";
-import {Blue6Data, getBlue6s} from "./Blue6API";
+import {Blue6Data, deleteBlue6s, getBlue6s} from "./Blue6API";
 import './DisplayReportTable.css';
-import {Blue7Data, getBlue7s} from "./Blue7API";
+import {Blue7Data, deleteBlue7s, getBlue7s, sendBlue7s} from "./Blue7API";
+import Delete from "./Delete.svg"
+import {Blue7} from "./Blue7";
 
 export const DisplayReportTable = () => {
 
 const [displayReportBlue6, setDisplayReportBlue6] = useState<Blue6Data[]>([]);
 const[displayReportBlue7, setDisplayReportBlue7] = useState<Blue7Data[]>([]);
+
+
 useEffect( () => {
     getBlue6s()
         .then((data) => {
@@ -30,7 +34,7 @@ useEffect(() => {
 
 return (
 <div>
-<h2>Ongoing Training</h2>
+<h2>Active Training</h2>
 <div className='table-container'>
 <table>
     <div className= 'overflow'>
@@ -46,6 +50,7 @@ return (
         <th>Contact Name and Phone #</th>
     </tr>
         {displayReportBlue6.map((blueSixData) => {
+            console.log('Here is my current Blue6 id ', blueSixData.id)
             return (
                 <tr>
                     <td>
@@ -75,44 +80,24 @@ return (
                     <td>
                         {blueSixData.pocInput}
                     </td>
+                    <td>
+                        <button  type = "submit" onClick={(e) => {
+
+                            deleteBlue6s(blueSixData.id!)
+                            window.location.reload()
+                        }}>
+                            <img src={Delete}></img>
+                        </button>
+                    </td>
+
                 </tr>
             )
         })  }
 
-
-
-    {/*<tr>*/}
-    {/*    <td>*/}
-    {/*                {displayReport.map(blueSixData => <div>{blueSixData.reportingDateInput}</div>)}*/}
-    {/*    </td>*/}
-    {/*    <td>*/}
-    {/*        {displayReport.map(blueSixData => <div>{blueSixData.callSignInput}</div>)}*/}
-    {/*    </td>*/}
-    {/*    <td>*/}
-    {/*        {displayReport.map(blueSixData => <div>{blueSixData.spDateInput}</div>)}*/}
-    {/*    </td>*/}
-    {/*    <td>*/}
-    {/*        {displayReport.map(blueSixData => <div>{blueSixData.rpInput}</div>)}*/}
-    {/*    </td>*/}
-    {/*    <td>*/}
-    {/*        {displayReport.map(blueSixData => <div>{blueSixData.locInput}</div>)}*/}
-    {/*    </td>*/}
-    {/*    <td>*/}
-    {/*        {displayReport.map(blueSixData => <div>{blueSixData.etaInput}</div>)}*/}
-    {/*    </td>*/}
-    {/*    <td>*/}
-    {/*        {displayReport.map(blueSixData => <div>{blueSixData.siInput}</div>)}*/}
-    {/*    </td>*/}
-    {/*    <td>*/}
-    {/*        {displayReport.map(blueSixData => <div>{blueSixData.narInput}</div>)}*/}
-    {/*    </td>*/}
-    {/*    <td>*/}
-    {/*        {displayReport.map(blueSixData => <div>{blueSixData.pocInput}</div>)}*/}
-    {/*    </td>*/}
-    {/*</tr>*/}
     </div>
 
 </table>
+    <h2>Completed Training</h2>
 
     <table>
         <div className= 'overflow'>
@@ -126,6 +111,8 @@ return (
                 <th>Sensitive Item Status</th>
             </tr>
             {displayReportBlue7.map((blueSevenData) => {
+                console.log('Here is my Blue7 data ', blueSevenData)
+                console.log('Here is my current Blue7 id ', blueSevenData.id)
                 return (
                     <tr>
                         <td>
@@ -149,42 +136,20 @@ return (
                         <td>
                             {blueSevenData.checkOutSiInput}
                         </td>
+                        <td>
+                            <button  type = "submit" onClick={(e) => {
+
+                                deleteBlue7s(blueSevenData.id!)
+                                window.location.reload()
+                            }}>
+                                <img src={Delete}></img>
+                            </button>
+                        </td>
 
                     </tr>
                 )
-            })  }
+            })}
 
-
-
-            {/*<tr>*/}
-            {/*    <td>*/}
-            {/*                {displayReport.map(blueSixData => <div>{blueSixData.reportingDateInput}</div>)}*/}
-            {/*    </td>*/}
-            {/*    <td>*/}
-            {/*        {displayReport.map(blueSixData => <div>{blueSixData.callSignInput}</div>)}*/}
-            {/*    </td>*/}
-            {/*    <td>*/}
-            {/*        {displayReport.map(blueSixData => <div>{blueSixData.spDateInput}</div>)}*/}
-            {/*    </td>*/}
-            {/*    <td>*/}
-            {/*        {displayReport.map(blueSixData => <div>{blueSixData.rpInput}</div>)}*/}
-            {/*    </td>*/}
-            {/*    <td>*/}
-            {/*        {displayReport.map(blueSixData => <div>{blueSixData.locInput}</div>)}*/}
-            {/*    </td>*/}
-            {/*    <td>*/}
-            {/*        {displayReport.map(blueSixData => <div>{blueSixData.etaInput}</div>)}*/}
-            {/*    </td>*/}
-            {/*    <td>*/}
-            {/*        {displayReport.map(blueSixData => <div>{blueSixData.siInput}</div>)}*/}
-            {/*    </td>*/}
-            {/*    <td>*/}
-            {/*        {displayReport.map(blueSixData => <div>{blueSixData.narInput}</div>)}*/}
-            {/*    </td>*/}
-            {/*    <td>*/}
-            {/*        {displayReport.map(blueSixData => <div>{blueSixData.pocInput}</div>)}*/}
-            {/*    </td>*/}
-            {/*</tr>*/}
         </div>
 
     </table>
@@ -192,11 +157,6 @@ return (
 
 </div>
 <div className= "tableContent">
-    {/*{JSON.stringify(displayReport)}*/}
-    {/*{displayReport[0]}*/}
-    {/*{displayReport.map(blueSixData => (*/}
-    {/*    {Blue6Data:blueSixData.reportingDateInput}))}*/}
-
 
 </div>
 </div>)
