@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {Blue6Data, deleteBlue6s, getBlue6s} from "./Blue6API";
 import './DisplayReportTable.css';
-import {Blue7Data, deleteBlue7s, getBlue7s, sendBlue7s} from "./Blue7API";
+import {Blue7Data, deleteBlue7s, getBlue7s} from "./Blue7API";
 import Delete from "./Delete.svg"
-import {Blue7} from "./Blue7";
 
 export const DisplayReportTable = () => {
 
@@ -25,7 +24,7 @@ useEffect(() => {
     getBlue7s()
         .then((data) => {
             setDisplayReportBlue7(data);
-            console.log(displayReportBlue7)
+
         })
         .catch(() => {
             console.error('blue7 data transfer didnt work')
@@ -86,7 +85,7 @@ return (
                             deleteBlue6s(blueSixData.id!)
                             window.location.reload()
                         }}>
-                            <img src={Delete}></img>
+                            <img alt = "delete" src={Delete}/>
                         </button>
                     </td>
 
@@ -142,7 +141,7 @@ return (
                                 deleteBlue7s(blueSevenData.id!)
                                 window.location.reload()
                             }}>
-                                <img src={Delete}></img>
+                                <img alt = "delete" src={Delete}/>
                             </button>
                         </td>
 

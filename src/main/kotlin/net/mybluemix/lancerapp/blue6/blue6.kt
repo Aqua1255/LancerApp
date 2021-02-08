@@ -8,7 +8,7 @@ import java.io.Serializable
 
 @Entity
 data class Blue6(
-        @GeneratedValue(strategy = GenerationType.AUTO)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Id
         val Id: Long=0,
         val reportingDateInput: String = "",

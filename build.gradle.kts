@@ -19,14 +19,20 @@ repositories {
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-data-rest")
-	implementation("org.springframework.boot:spring-boot-starter-security")
+//	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+//	implementation("org.springframework.boot:spring-boot-starter-tomcat")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
+	implementation("org.flywaydb:flyway-core")
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+//	implementation("org.hibernate:hibernate-core:4.1.4.Final")
+//	implementation("org.hibernate:hibernate-entitymanager:5.2.3.Final")
+//	implementation("javax.xml.bind:jaxb-api:2.3.0")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	runtimeOnly("com.h2database:h2")
+	runtimeOnly("org.postgresql:postgresql:42.2.18")
 
 }
 
