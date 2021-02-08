@@ -8,7 +8,7 @@ import javax.persistence.Id
 
 @Entity
 data class Blue7(
-        @GeneratedValue(strategy = GenerationType.AUTO)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Id
         val Id: Long=0,
         val checkOutReportingDateInput: String = "",
