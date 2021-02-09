@@ -6,4 +6,4 @@ applications:
   buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
   memory: 256M
   services:
-    - LancerApp_Postgres
+    - Databases for PostgreSQL-yb
