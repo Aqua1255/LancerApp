@@ -1,7 +1,7 @@
 ---
 applications:
   - name: LancerApp
-    path: ./build/libs/Lancer-App-Backend-2-0.0.1-SNAPSHOT.jar
+    path: ../build/libs/Lancer-App-Backend-2-0.0.1-SNAPSHOT.jar
     instances: 1
     buildpack: https://github.com/cloudfoundry/java-buildpack.git
     memory: 256M
