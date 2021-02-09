@@ -1,4 +1,4 @@
-package net.mybluemix.lancerapp.blue7
+package lancer.blue7
 
 import java.io.Serializable
 import javax.persistence.Entity

@@ -1,4 +1,4 @@
-package net.mybluemix.lancerapp
+package lancer
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

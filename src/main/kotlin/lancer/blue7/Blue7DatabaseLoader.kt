@@ -1,4 +1,4 @@
-package net.mybluemix.lancerapp.blue7
+package lancer.blue7
 
 import org.springframework.boot.CommandLineRunner
 import org.springframework.context.annotation.Bean

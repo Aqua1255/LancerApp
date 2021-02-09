@@ -1,4 +1,4 @@
-package net.mybluemix.lancerapp.blue6
+package lancer.blue6
 
 import org.springframework.data.repository.CrudRepository
 
