@@ -33,6 +33,10 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	runtimeOnly("com.h2database:h2")
 	runtimeOnly("org.postgresql:postgresql:42.2.18")
+//	runtimeOnly("net.bluemix:bluemix-cloud-connectors-cloudfoundry:0.0.3")
+//	runtimeOnly("net.bluemix:bluemix-cloud-connectors-local:")
+	runtimeOnly("org.springframework.cloud:spring-cloud-spring-service-connector:2.1.3.RELEASE")
+
 
 }
 
