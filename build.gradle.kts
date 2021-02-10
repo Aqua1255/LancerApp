@@ -36,7 +36,7 @@ dependencies {
 //	runtimeOnly("net.bluemix:bluemix-cloud-connectors-cloudfoundry:0.0.3")
 //	runtimeOnly("net.bluemix:bluemix-cloud-connectors-local:")
 //	runtimeOnly("org.springframework.cloud:spring-cloud-spring-service-connector:2.1.3.RELEASE")
-//	implementation("com.ibm.cloud:ibm-cloud-spring-boot-service-bind:1.1.2")
+	implementation("com.ibm.cloud:ibm-cloud-spring-boot-service-bind:1.1.2")
 
 
 }
