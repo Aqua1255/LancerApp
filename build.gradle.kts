@@ -35,7 +35,8 @@ dependencies {
 	runtimeOnly("org.postgresql:postgresql:42.2.18")
 //	runtimeOnly("net.bluemix:bluemix-cloud-connectors-cloudfoundry:0.0.3")
 //	runtimeOnly("net.bluemix:bluemix-cloud-connectors-local:")
-	runtimeOnly("org.springframework.cloud:spring-cloud-spring-service-connector:2.1.3.RELEASE")
+//	runtimeOnly("org.springframework.cloud:spring-cloud-spring-service-connector:2.1.3.RELEASE")
+	runtimeOnly("com.ibm.cloud:ibm-cloud-spring-boot-service-bind:1.1.2")
 
 
 }
