@@ -3,10 +3,11 @@ spring:
     rest:
       base-path: /api
   datasource:
-    url: jdbc:postgresql://localhost:5432/LancerApp_Postgres_Local
+    # CONNECTION_POSTGRES_URL
+    url: jdbc:postgresql://${Lancer_HOSTNAME:localhost}:${Lancer_PORT:5432}/${Lancer_DB_NAME}
 #    driver-class-name: org.h2.Driver
-    username: alex
-    password: mickeyMantle
+    username: ${Lancer_username}
+    password: ${Lancer_password}
     driver-class-name: org.postgresql.Driver
   jpa:
 #    database-platform: org.hibernate.dialect.H2Dialect
