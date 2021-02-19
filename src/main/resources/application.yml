@@ -4,7 +4,7 @@ spring:
       base-path: /api
   datasource:
     # CONNECTION_POSTGRES_URL
-    url: jdbc:postgresql://${Lancer_HOSTNAME:localhost}:${Lancer_PORT:5432}/${Lancer_DB_NAME}
+    url: jdbc:postgresql://${Lancer_HOSTNAME:localhost}:${Lancer_PORT:5432}/${Lancer_DB_NAME:LancerApp_DB_Postgresql}
 #    driver-class-name: org.h2.Driver
     username: ${Lancer_username}
     password: ${Lancer_password}
@@ -26,6 +26,7 @@ spring:
     locations: classpath:/db/migration
     ignore-missing-migrations: false
     out-of-order: true
+    flyway.baseline-on-migrate: true
 #  h2:
 #    console:
 #      enabled: true
