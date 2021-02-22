@@ -1,13 +1,20 @@
 spring:
+  security:
+    oath2:
+      client:
+        registration:
+          google:
+            client-id:
+            client-secret:
   data:
     rest:
       base-path: /api
   datasource:
     # CONNECTION_POSTGRES_URL
-    url: jdbc:postgresql://${Lancer_HOSTNAME:localhost}:${Lancer_PORT:5432}/${Lancer_DB_NAME:LancerApp_DB_Postgresql}
+    url: jdbc:postgresql://${Lancer_HOSTNAME:localhost}:${Lancer_PORT:5432}/${Lancer_DB_NAME:LancerApp_Postgres}
 #    driver-class-name: org.h2.Driver
-    username: ${Lancer_username}
-    password: ${Lancer_password}
+    username: ${Lancer_username:machine}
+    password: ${Lancer_password:mickeyMantle}
     driver-class-name: org.postgresql.Driver
   jpa:
 #    database-platform: org.hibernate.dialect.H2Dialect
