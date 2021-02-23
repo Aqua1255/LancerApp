@@ -1,0 +1,7 @@
+.jblm-map{
+    height: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

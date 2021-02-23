@@ -6,6 +6,7 @@ import './App.css'
 import {Blue6} from "./Blue6";
 import {Blue7} from "./Blue7";
 import {DisplayReportTable} from "./DisplayReportTable";
+import {BaseMap} from "./BaseMap";
 
 
 export const App = () => {
@@ -55,8 +56,9 @@ export const App = () => {
                 </div>
             )
             }
-
-
+            <div className={"display-table"}>
+                <BaseMap/>
+            </div>
         </div>
 
 
