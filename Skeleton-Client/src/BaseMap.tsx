@@ -1,30 +1,60 @@
 
-import React, {useEffect} from "react";
-import L, {control} from 'leaflet';
+import React, {useEffect, useState} from "react";
+import L, {control, marker} from 'leaflet';
 import './BaseMap.css'
-
+import {Blue6Data, getBlue6s} from "./Blue6API";
+import {LatLongFromMGRSstring} from "./mgrsConverter";
 
 
 
 export const BaseMap = () => {
+
+    const [locInputBlue6, setLocInputBlue6] = useState<Blue6Data[]>([]);
+    // const [callSignInputBlue6, setCallSignInputBlue6] = useState<Blue6Data[]>([]);
+    // const [pocInputBlue6, setPocInputBlue6] = useState<Blue6Data[]>([])
+
+    useEffect( () => {
+        getBlue6s()
+            .then((data) => {
+                setLocInputBlue6(data);
+                const mymap = L.map('mapId').setView([47.108783, -122.612695], 9.5);
+
+                {data.map((blueSixData) => {
+                    console.log('Here is my current Blue6 id ', blueSixData.id)
+                    const convertedGrids = LatLongFromMGRSstring(blueSixData.locInput)
+                    const marker = L.marker(convertedGrids).addTo(mymap);
+                    marker.bindPopup(blueSixData.callSignInput +'</br>'+blueSixData.pocInput)
+                }, []);}
+
+
+
+
+
+                const marker = L.marker([47.108783, -122.612695]).addTo(mymap);
+                //
+                //
+                marker.bindPopup("<b>JBLM</b><br>America's Joint Base!</br>").openPopup();
+
+
+                L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                    maxZoom: 18,
+                    id: 'mapbox/streets-v11',
+                    tileSize: 512,
+                    zoomOffset: -1,
+                    accessToken: 'pk.eyJ1IjoibGttMTIzIiwiYSI6ImNrbGg0Y2l6ajB6ajYydm9pajB2eHFnbWoifQ.xjG0eiiZth_5dRPkgYsoxQ'
+                }).addTo(mymap);
+            })
+            .catch(() => {
+                console.error('blue6LocInput data transfer didnt work')
+            })
+    },[]);
+
     useEffect(() => {
 
-        const mymap = L.map('mapId').setView([47.108783, -122.612695], 9.5);
-        const marker = L.marker([47.108783, -122.612695]).addTo(mymap);
-        marker.bindPopup("<b>JBLM</b><br>America's Joint Base!").openPopup();
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            maxZoom: 18,
-            id: 'mapbox/streets-v11',
-            tileSize: 512,
-            zoomOffset: -1,
-            accessToken: 'pk.eyJ1IjoibGttMTIzIiwiYSI6ImNrbGg0Y2l6ajB6ajYydm9pajB2eHFnbWoifQ.xjG0eiiZth_5dRPkgYsoxQ'
-        }).addTo(mymap);}, [])
 
 
-
-
-
+        }, [])
 
     return (
         <>
