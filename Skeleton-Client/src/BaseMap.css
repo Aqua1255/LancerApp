@@ -7,6 +7,14 @@
 }
 
 .map-wrapper{
-    width: 50vw;
+    width: 90vw;
     height: 50vh;
+}
+
+@media screen and (max-width: 426px) {
+    .map-wrapper{
+        width: 90vw;
+        height: 50vh;
+
+    }
 }
