@@ -39,7 +39,7 @@ return (
 <table>
     <div className= 'overflow'>
     <tr>
-        <th>Reporting Date</th>
+        <th>Reporting Date Time Group</th>
         <th>Unit & Call Sign</th>
         <th>SP Date Time Group</th>
         <th>Estimated RP Date Time Group</th>
