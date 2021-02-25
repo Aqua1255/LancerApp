@@ -17,7 +17,7 @@ export const BaseMap = () => {
         getBlue6s()
             .then((data) => {
                 setLocInputBlue6(data);
-                const mymap = L.map('mapId').setView([47.108783, -122.612695], 9.5);
+                const mymap = L.map('mapId').setView([47.056281, -122.612695], 8.7);
 
                 {data.map((blueSixData) => {
                     console.log('Here is my current Blue6 id ', blueSixData.id)
@@ -30,19 +30,17 @@ export const BaseMap = () => {
 
 
 
-                const marker = L.marker([47.108783, -122.612695]).addTo(mymap);
+                // const marker = L.marker([47.056281, -122.612695]).addTo(mymap);
                 //
                 //
-                marker.bindPopup("<b>JBLM</b><br>America's Joint Base!</br>").openPopup();
+                // marker.bindPopup("<b>JBLM</b><br>America's Joint Base!</br>").openPopup();
 
 
-                L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
                     maxZoom: 18,
-                    id: 'mapbox/streets-v11',
                     tileSize: 512,
                     zoomOffset: -1,
-                    accessToken: 'pk.eyJ1IjoibGttMTIzIiwiYSI6ImNrbGg0Y2l6ajB6ajYydm9pajB2eHFnbWoifQ.xjG0eiiZth_5dRPkgYsoxQ'
                 }).addTo(mymap);
             })
             .catch(() => {
@@ -68,9 +66,9 @@ export const BaseMap = () => {
                     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
                     crossOrigin="">
             </script>
-
+            <div className="map-wrapper">
             <div id="mapId" className="jblm-map"></div>
-
+            </div>
 
 
 

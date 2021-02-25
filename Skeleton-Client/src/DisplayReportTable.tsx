@@ -33,8 +33,9 @@ useEffect(() => {
 
 return (
 <div>
-<h2>Active Training</h2>
 <div className='table-container'>
+    <div className='table-wrapper'>
+        <h2>Active Training</h2>
 <table>
     <div className= 'overflow'>
     <tr>
@@ -94,11 +95,12 @@ return (
         })  }
 
     </div>
-
 </table>
-    <h2>Completed Training</h2>
+    </div>
 
-    <table>
+    <div className="table-wrapper">
+        <h2>Completed Training</h2>
+     <table>
         <div className= 'overflow'>
             <tr>
                 <th>Reporting Date Time Group</th>
@@ -152,6 +154,7 @@ return (
         </div>
 
     </table>
+    </div>
 
 
 </div>

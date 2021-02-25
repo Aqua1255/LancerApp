@@ -6,21 +6,22 @@ table{
 
 
 }
-.overflow{
-    width: 290px;
-    overflow-x:scroll;
-    padding-bottom: 10px;
 
 
-}
-
+/*.overflow-container{*/
+/*    width: fit-content;*/
+/*}*/
 
 /* css  psuedoclass for making scrollbar visible"  for all scrollbars*/
 ::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 10px;
 }
+/*@media screen and (width: 426px) {*/
+/*    .overflow {*/
 
+/*    }*/
+/*}*/
 
 ::-webkit-scrollbar-thumb {
     border-radius: 5px;
@@ -51,4 +52,22 @@ h2{
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+}
+
+.table-wrapper {
+    width: 80vw;
+    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+.overflow{
+    width: 100%;
+    overflow-x:scroll;
+    padding-bottom: 10px;
 }

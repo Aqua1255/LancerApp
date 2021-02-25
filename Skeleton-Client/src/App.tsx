@@ -43,8 +43,8 @@ export const App = () => {
 
             <div className="form-container">{reportSelection === 0 ?
                 <>
-                    <button onClick={() => setReportSelection(1)}>Initiate Training Event w/ Blue 6</button>
-                    <button onClick={() => setReportSelection(2)}>Close-Out Training Event w/ Blue 7</button>
+                    <button onClick={() => setReportSelection(1)}>Initiate w/ Blue 6</button>
+                    <button onClick={() => setReportSelection(2)}>Close-Out w/ Blue 7</button>
                 </>
                 :
                 <button onClick={() => setReportSelection(0)} className="cancel-button">cancel</button>}
