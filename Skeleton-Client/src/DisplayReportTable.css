@@ -10,7 +10,11 @@ table{
     width: 290px;
     overflow-x:scroll;
     padding-bottom: 10px;
+
+
 }
+
+
 /* css  psuedoclass for making scrollbar visible"  for all scrollbars*/
 ::-webkit-scrollbar {
     -webkit-appearance: none;
