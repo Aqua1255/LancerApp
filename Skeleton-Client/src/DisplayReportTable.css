@@ -56,7 +56,7 @@ h2{
 }
 
 .table-wrapper {
-    width: 80vw;
+    width: 100vw;
     overflow-x: scroll;
     display: flex;
     align-items: center;
@@ -67,7 +67,7 @@ h2{
 
 
 .overflow{
-    width: 100%;
+    width: 80vw;
     overflow-x:scroll;
     padding-bottom: 10px;
 }
