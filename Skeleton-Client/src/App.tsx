@@ -6,6 +6,7 @@ import './App.css'
 import {Blue6} from "./Blue6";
 import {Blue7} from "./Blue7";
 import {DisplayReportTable} from "./DisplayReportTable";
+import {BaseMap} from "./BaseMap";
 
 
 export const App = () => {
@@ -42,8 +43,8 @@ export const App = () => {
 
             <div className="form-container">{reportSelection === 0 ?
                 <>
-                    <button onClick={() => setReportSelection(1)}>Initiate Training Event w/ Blue 6</button>
-                    <button onClick={() => setReportSelection(2)}>Close-Out Training Event w/ Blue 7</button>
+                    <button onClick={() => setReportSelection(1)}>Initiate w/ Blue 6</button>
+                    <button onClick={() => setReportSelection(2)}>Close-Out w/ Blue 7</button>
                 </>
                 :
                 <button onClick={() => setReportSelection(0)} className="cancel-button">cancel</button>}
@@ -55,8 +56,9 @@ export const App = () => {
                 </div>
             )
             }
-
-
+            <div className={"display-table"}>
+                <BaseMap/>
+            </div>
         </div>
 
 

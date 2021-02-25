@@ -50,8 +50,19 @@
   font-size: calc(7px + 2vmin);
   color: white;
 }
+.mod1-input{
+  width: 22px;
+  margin-left: 2px;
+}
+.mod2-input{
+  width: 18px;
+  margin-left:2px;
+}
 
-
+.grid-input{
+  width: 39px;
+  margin-left: 2px;
+}
 .App-link {
   color: #61dafb;
 }
@@ -78,13 +89,44 @@
   border: 1px solid #FF0000;
 }
 
+.grid-flow{
+  padding: .5em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+  /*vertical-align: top;*/
+
+  /* Uniform text field size */
+  /*box-sizing: border-box;*/
+
+  /* Match form field borders */
+  border: 1px solid #FF0000;
+}
+
+/*.grid-container{*/
+/*  flex-flow: nowrap;*/
+/*  justify-content: center;*/
+/*}*/
+
 @media screen and (max-width: 426px) {
   .label-row {
-    flex-flow: column
+    flex-flow: column;
   }
+}
+
+@media screen and (max-width: 426px) {
+.grid-flow{
+  justify-content: center;
+  flex-flow:column;
+
+}
 }
 
 .display-table{
   display: flex;
   justify-content: center;
+  padding: 10px;
 }

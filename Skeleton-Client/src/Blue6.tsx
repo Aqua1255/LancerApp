@@ -8,7 +8,10 @@ export const Blue6 = () => {
     const [callSignInputText, callSignSetInputText] = useState<string>("")
     const [spInputText, spSetInputText] = useState<string>("")
     const [rpInputText, rpSetInputText] = useState<string>("")
+    const [gridMod1, setGridMod1] = useState<string>("")
+    const [gridMod2, setGridMod2] =useState<string>("")
     const [cpInputText, cpSetInputText] = useState<string>("")
+    const [cpInputTextUp, cpSetInputTextUp] =useState<string>("")
     const [etaInputText, etaSetInputText] = useState<string>("")
     const [sensitiveInputText, sensitiveSetInputText] = useState<string>("")
     const [narInputText, narSetInputText] = useState<string>("")
@@ -55,11 +58,21 @@ export const Blue6 = () => {
             </label>
         </div>
         <div>
-            <label className="label-row">
+            <label className= "grid-flow">
                 Command Post Location:
-                <input value={cpInputText} onChange={(event) => {
+                <div>
+                <input className="mod1-input" maxLength={3} placeholder = "10T" value = {gridMod1} onChange={(event) => {
+                    setGridMod1(event.target.value)}}/>
+                <input className="mod2-input" maxLength={2} placeholder = "ET" value = {gridMod2} onChange={(event) => {
+                    setGridMod2(event.target.value)}}/>
+                <input className="grid-input" maxLength={5} placeholder = "01234" value={cpInputText} onChange={(event) => {
                     cpSetInputText(event.target.value)
                 }}/>
+                <input className="grid-input" maxLength={5} placeholder = "56789" value = {cpInputTextUp} onChange={(event) => {
+                    cpSetInputTextUp(event.target.value)
+                }}/>
+                </div>
+
             </label>
         </div>
         <div>
@@ -101,7 +114,7 @@ export const Blue6 = () => {
                     callSignInput : callSignInputText,
                     spDateInput : spInputText,
                     rpInput : rpInputText,
-                    locInput : cpInputText,
+                    locInput : gridMod1 + " " + gridMod2 + " " + cpInputText + " " + cpInputTextUp,
                     etaInput : etaInputText,
                     siInput : sensitiveInputText,
                     narInput : narInputText,
