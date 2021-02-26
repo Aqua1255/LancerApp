@@ -1,12 +1,12 @@
 package lancer.blue7
 
+import org.springframework.data.annotation.CreatedBy
+import org.springframework.data.jpa.domain.support.AuditingEntityListener
 import java.io.Serializable
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
+import javax.persistence.*
 
 @Entity
+//@EntityListeners(AuditingEntityListener::class)
 data class Blue7(
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Id
@@ -20,4 +20,10 @@ data class Blue7(
         val checkOutSiInput: String = ""
 
 
-) : Serializable {}
+) : Serializable {
+
+//        @ManyToOne
+//        @JoinColumn(name = "created_by_profile_id", updatable = false)
+//        @CreatedBy
+//        lateinit var createdBy: Blue7
+}
