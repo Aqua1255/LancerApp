@@ -6,7 +6,7 @@ import java.io.Serializable
 import javax.persistence.*
 
 @Entity
-@EntityListeners(AuditingEntityListener::class)
+//@EntityListeners(AuditingEntityListener::class)
 data class Blue7(
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Id
@@ -22,8 +22,8 @@ data class Blue7(
 
 ) : Serializable {
 
-        @ManyToOne
-        @JoinColumn(name = "created_by_profile_id", updatable = false)
-        @CreatedBy
-        lateinit var createdBy: Blue7
+//        @ManyToOne
+//        @JoinColumn(name = "created_by_profile_id", updatable = false)
+//        @CreatedBy
+//        lateinit var createdBy: Blue7
 }
