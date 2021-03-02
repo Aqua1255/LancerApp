@@ -1,9 +1,10 @@
 package lancer.blue6
 
 import org.springframework.data.repository.CrudRepository
+//import org.springframework.security.access.prepost.PreAuthorize
 
-
-interface Blue6Repository : CrudRepository<Blue6?, Long?>
+//@PreAuthorize(("hasPermission('lancer.blue6.Blue6', 'blah')"))
+interface Blue6Repository : CrudRepository<Blue6, Long>
 
 
 //@RepositoryRestResource(collectionResourceRel = "blue 6", path = "blue 6")
