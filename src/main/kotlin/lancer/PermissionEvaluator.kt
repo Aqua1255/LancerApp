@@ -27,3 +27,4 @@ class AbacPermissionEvaluator : PermissionEvaluator {
         private val logger: Logger = LoggerFactory.getLogger(AbacPermissionEvaluator::class.java)
     }
 }
+

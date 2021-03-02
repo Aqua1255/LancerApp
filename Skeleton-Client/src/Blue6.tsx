@@ -109,6 +109,7 @@ export const Blue6 = () => {
         </div>
         <div className="checkButton-styling">
             <button type="submit" onClick={(e)=> {
+                e.preventDefault()
                 const Blue6formData = {
                     reportingDateInput : reportingDateInputText,
                     callSignInput : callSignInputText,
@@ -121,8 +122,9 @@ export const Blue6 = () => {
                     pocInput: contactInputText
                 }
 
-                sendBlue6s(Blue6formData)
-                window.location.reload()
+                sendBlue6s(Blue6formData).then( () => {
+                    window.location.reload()
+                })
 
             }}>
                 submit
