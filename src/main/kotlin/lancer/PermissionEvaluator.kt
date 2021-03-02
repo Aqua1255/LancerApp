@@ -12,14 +12,14 @@ import java.io.Serializable
 @Component
 class AbacPermissionEvaluator : PermissionEvaluator {
     override fun hasPermission(authentication: Authentication, targetDomainObject: Any?, permission: Any): Boolean {
-        logger.info("You have permission!")
+        logger.info("You have permission! ${authentication.name}")
         return true
     }
 
 
     override fun hasPermission(authentication: Authentication, targetId: Serializable, targetType: String, permission: Any): Boolean {
 //        logger.debug("hasPersmission({}, {}, {})", user, targetDomainObject, permission)
-        logger.info("You have permission!")
+        logger.info("You have permission! ${authentication.name}")
         return true
     }
 
