@@ -2,6 +2,7 @@ package lancer.blue7
 
 import org.springframework.data.annotation.CreatedBy
 import org.springframework.data.jpa.domain.support.AuditingEntityListener
+import org.springframework.security.core.context.SecurityContextHolder
 import java.io.Serializable
 import javax.persistence.*
 
@@ -21,9 +22,11 @@ data class Blue7(
 
 
 ) : Serializable {
+        @Column(name = "created_by", updatable = false)
+        var createdBy: String = SecurityContextHolder.getContext().authentication.name
 
 //        @ManyToOne
-//        @JoinColumn(name = "created_by_profile_id", updatable = false)
+
 //        @CreatedBy
 //        lateinit var createdBy: Blue7
 }
