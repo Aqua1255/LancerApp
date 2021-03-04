@@ -12,7 +12,9 @@ CREATE TABLE Blue6
     nar_input            TEXT,
     poc_input            TEXT
 
+
 );
+
 CREATE TABLE Blue7(
 
      id SERIAL,

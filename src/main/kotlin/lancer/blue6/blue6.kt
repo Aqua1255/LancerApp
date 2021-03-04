@@ -8,6 +8,7 @@ import java.io.Serializable
 import javax.persistence.*
 
 @Entity
+@EntityListeners(AuditingEntityListener::class)
 //@EntityListeners(AuditingEntityListener::class)
 data class Blue6(
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,10 +26,12 @@ data class Blue6(
 
 
 ): Serializable {
-//        @ManyToOne
         @Column(name = "created_by", updatable = false)
-//        @CreatedBy
-        var createdBy: String = SecurityContextHolder.getContext().authentication.name
+        @CreatedBy
+        lateinit var createdBy: String
+//        @ManyToOne
+//        @Column(name = "created_by", updatable = false)
+//        var createdBy: String = SecurityContextHolder.getContext().authentication.name
 }
 
 
