@@ -7,6 +7,7 @@ import {Blue6} from "./Blue6";
 import {Blue7} from "./Blue7";
 import {DisplayReportTable} from "./DisplayReportTable";
 import {BaseMap} from "./BaseMap";
+import {NavBar} from "./NavBar";
 
 
 
@@ -17,13 +18,10 @@ export const App = () => {
 
 
     return (
-
+        <>
+        <NavBar/>
         <div className="background-container">
-            <header>
-                <h1 className="body">
-                    Lancer Brigade Operations Center
-                </h1>
-            </header>
+
             <img src={Logo} className="App-logo" alt="logo"/>
 
             <div className="form-container">
@@ -61,7 +59,7 @@ export const App = () => {
                 <BaseMap/>
             </div>
         </div>
-
+        </>
 
     )
 }
