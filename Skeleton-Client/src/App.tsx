@@ -7,6 +7,12 @@ import {Blue6} from "./Blue6";
 import {Blue7} from "./Blue7";
 import {DisplayReportTable} from "./DisplayReportTable";
 import {BaseMap} from "./BaseMap";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 
 

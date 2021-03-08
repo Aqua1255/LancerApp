@@ -6,13 +6,20 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository
 
 
+
 @Configuration
 class AuthConfig : WebSecurityConfigurerAdapter() {
     override fun configure(http: HttpSecurity) {
         super.configure(http)
-            http.oauth2Login()
+            http.httpBasic().disable().formLogin().disable()
+            http.oauth2Login()//.loginPage("/oauth2/authorization/sso")
 //            http.csrf().disable()
             http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
 
     }
 }
+
+
+
+
+
