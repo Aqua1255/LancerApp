@@ -1,9 +1,11 @@
 import React, {useState} from "react";
-import './index.css'
-import './App.css'
+import '../index.css'
+import '../App.css'
 import {sendBlue6s} from "./Blue6API";
+import { useHistory } from "react-router-dom";
 
 export const Blue6 = () => {
+    const history = useHistory();
     const [reportingDateInputText, reportingDateSetInputText] = useState<string>("")
     const [callSignInputText, callSignSetInputText] = useState<string>("")
     const [spInputText, spSetInputText] = useState<string>("")
@@ -20,7 +22,7 @@ export const Blue6 = () => {
 
 
     return (
-    <form>
+    <form className="background-container">
         <h1>
             Complete Your Blue 6 Below:
         </h1>
@@ -123,7 +125,8 @@ export const Blue6 = () => {
                 }
 
                 sendBlue6s(Blue6formData).then( () => {
-                    window.location.reload()
+                    history.push("/")
+                    // window.location.reload()
                 })
 
             }}>

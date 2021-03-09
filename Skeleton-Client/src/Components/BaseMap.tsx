@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react";
 import L, {control, marker} from 'leaflet';
 import './BaseMap.css'
 import {Blue6Data, getBlue6s} from "./Blue6API";
-import {LatLongFromMGRSstring} from "./mgrsConverter";
+import {LatLongFromMGRSstring} from "../mgrsConverter";
 
 
 

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Blue6Data, deleteBlue6s, getBlue6s} from "./Blue6API";
 import './DisplayReportTable.css';
 import {Blue7Data, deleteBlue7s, getBlue7s} from "./Blue7API";
-import Delete from "./Delete.svg"
+import Delete from "../Icons/Delete.svg"
 
 export const DisplayReportTable = () => {
 

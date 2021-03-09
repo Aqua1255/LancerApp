@@ -13,7 +13,7 @@ class AuthConfig : WebSecurityConfigurerAdapter() {
         super.configure(http)
             http.httpBasic().disable().formLogin().disable()
             http.oauth2Login()//.loginPage("/oauth2/authorization/sso")
-//            http.csrf().disable()
+            http.csrf().disable()
             http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
 
     }

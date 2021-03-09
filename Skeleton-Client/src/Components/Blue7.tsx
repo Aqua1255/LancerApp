@@ -1,9 +1,11 @@
 import React, {useState} from "react";
-import './index.css'
-import './App.css'
+import '../index.css'
+import '../App.css'
 import {sendBlue7s} from "./Blue7API";
+import {useHistory} from "react-router-dom";
 
 export const Blue7 = () => {
+    const history = useHistory();
     const[checkOutReportingDateInputText, checkOutReportingDateSetInputText] = useState<string>("")
     const[checkOutCallSignInputText, checkOutCallSignSetInputText] = useState<string>("")
     const[checkOutRpDateInputText, checkOutRpDateSetInputText] = useState<string>("")
@@ -16,7 +18,7 @@ export const Blue7 = () => {
     const[checkOutSiInputText, checkOutSiSetInputText] = useState<string>("")
 
     return (
-        <form>
+        <form className="background-container">
             <h1 className="body">
                 Complete Your Blue 7 Below:
             </h1>
@@ -76,7 +78,7 @@ export const Blue7 = () => {
                     checkOutSiInput: checkOutSiInputText,
                 }
                 sendBlue7s(Blue7formData)
-                window.location.reload()
+                history.push("/")
             }
             }>submit</button>
         </div>
