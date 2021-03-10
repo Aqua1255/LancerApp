@@ -3,6 +3,8 @@ import '../index.css'
 import '../App.css'
 import {sendBlue6s} from "./Blue6API";
 import { useHistory } from "react-router-dom";
+import {Homepage} from "./Homepage";
+import {Button} from "reactstrap";
 
 export const Blue6 = () => {
     const history = useHistory();
@@ -110,7 +112,7 @@ export const Blue6 = () => {
             </label>
         </div>
         <div className="checkButton-styling">
-            <button type="submit" onClick={(e)=> {
+            <Button type="submit" onClick={(e)=> {
                 e.preventDefault()
                 const Blue6formData = {
                     reportingDateInput : reportingDateInputText,
@@ -131,8 +133,8 @@ export const Blue6 = () => {
 
             }}>
                 submit
-            </button>
-
+            </Button>
+            <Button onClick={() => window.location.href ="/"}>cancel</Button>
         </div>
     </form>
     )}
