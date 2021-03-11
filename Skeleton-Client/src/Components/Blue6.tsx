@@ -3,7 +3,6 @@ import '../index.css'
 import '../App.css'
 import {sendBlue6s} from "./Blue6API";
 import { useHistory } from "react-router-dom";
-import {Homepage} from "./Homepage";
 import {Button} from "reactstrap";
 
 export const Blue6 = () => {
@@ -25,9 +24,10 @@ export const Blue6 = () => {
 
     return (
     <form className="background-container">
-        <h1>
+        <div>
+        <h2>
             Complete Your Blue 6 Below:
-        </h1>
+        </h2>
         <div>
             <label className="label-row">
                 Reporting Date Time Group:
@@ -53,7 +53,7 @@ export const Blue6 = () => {
             </label>
         </div>
 
-        <div>
+        <div >
             <label className="label-row">
                 Estimated RP Date Time Group:
                 <input value={rpInputText} onChange={(event) => {
@@ -111,8 +111,8 @@ export const Blue6 = () => {
                 }}/>
             </label>
         </div>
-        <div className="checkButton-styling">
-            <Button type="submit" onClick={(e)=> {
+        <div>
+            <Button size = "sm" type="submit" onClick={(e)=> {
                 e.preventDefault()
                 const Blue6formData = {
                     reportingDateInput : reportingDateInputText,
@@ -134,7 +134,7 @@ export const Blue6 = () => {
             }}>
                 submit
             </Button>
-            <Button onClick={() => window.location.href ="/"}>cancel</Button>
+        </div>
         </div>
     </form>
     )}

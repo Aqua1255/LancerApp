@@ -27,7 +27,7 @@ export const App = () => {
                         <Navbar className="mx-auto unclass-banner" >Unclassified</Navbar>
                     </Navbar>
                         <Navbar color="faded" light>
-                            <NavbarBrand to="/" className="me-auto">Lancer Brigade Operations Center</NavbarBrand>
+                            <NavbarBrand href="/" className="me-auto">Lancer Brigade Operations Center</NavbarBrand>
                             <NavbarToggler onClick={toggleNavbar} className="me-2" />
                             <Collapse isOpen={!collapsed} navbar>
                                 <Nav navbar>

@@ -131,8 +131,10 @@
     padding: 10px;
 }
 
-.input-button{
-    width: 100px;
+.Button.bottom{
+    padding-left: 20px;
+    padding-right:20px;
+    padding-top: 30px;
 }
 
 .unclassified-header {
@@ -142,3 +144,8 @@
     align-items: center;
     justify-content: center;
 }
+
+.h2-padding{
+    padding-top: 30px;
+}
+

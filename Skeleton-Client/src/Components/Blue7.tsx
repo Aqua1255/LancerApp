@@ -3,6 +3,7 @@ import '../index.css'
 import '../App.css'
 import {sendBlue7s} from "./Blue7API";
 import {useHistory} from "react-router-dom";
+import { Button } from "reactstrap";
 
 export const Blue7 = () => {
     const history = useHistory();
@@ -67,7 +68,7 @@ export const Blue7 = () => {
             </label>
         </div>
         <div className="checkButton-styling">
-            <button type="submit" onClick={(e) => {
+            <Button type="submit" onClick={(e) => {
                 const Blue7formData = {
                     checkOutReportingDateInput: checkOutReportingDateInputText,
                     checkOutCallSignInput: checkOutCallSignInputText,
@@ -80,7 +81,7 @@ export const Blue7 = () => {
                 sendBlue7s(Blue7formData)
                 history.push("/")
             }
-            }>submit</button>
+            }>submit</Button>
         </div>
     </form>
 
