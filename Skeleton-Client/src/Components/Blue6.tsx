@@ -3,7 +3,8 @@ import '../index.css'
 import '../App.css'
 import {sendBlue6s} from "./Blue6API";
 import { useHistory } from "react-router-dom";
-import {Button} from "reactstrap";
+import {Button, Col, Form, FormGroup, Input, Row} from "reactstrap";
+import {Label} from "reactstrap/lib";
 
 export const Blue6 = () => {
     const history = useHistory();
@@ -23,96 +24,90 @@ export const Blue6 = () => {
 
 
     return (
-    <form className="background-container">
-        <div>
-        <h2>
-            Complete Your Blue 6 Below:
-        </h2>
-        <div>
-            <label className="label-row">
-                Reporting Date Time Group:
-                <input value={reportingDateInputText} onChange={(event) => {
-                    reportingDateSetInputText(event.target.value)
-                }}/>
-            </label>
-        </div>
-        <div>
-            <label className="label-row">
-                Unit & Call Sign:
-                <input value={callSignInputText} onChange={(event) => {
-                    callSignSetInputText(event.target.value)
-                }}/>
-            </label>
-        </div>
-        <div>
-            <label className="label-row">
-                SP Date Time Group:
-                <input value={spInputText} onChange={(event) => {
-                    spSetInputText(event.target.value)
-                }}/>
-            </label>
-        </div>
+    <Form className="p-4">
 
-        <div >
-            <label className="label-row">
-                Estimated RP Date Time Group:
-                <input value={rpInputText} onChange={(event) => {
-                    rpSetInputText(event.target.value)
+    <FormGroup row className="mt-3">
+        <Label sm={4}>Reporting Date Time Group</Label>
+        <Col md={6}>
+            <Input value={reportingDateInputText} onChange={(event) => {
+                reportingDateSetInputText(event.target.value)
+            }}/>
+        </Col>
+    </FormGroup>
+        <FormGroup row>
+            <Label sm={4}>Unit and Call Sign</Label>
+            <Col md={6}>
+                <Input value={callSignInputText} onChange={(event) => {
+                                   callSignSetInputText(event.target.value)
                 }}/>
-            </label>
-        </div>
-        <div>
-            <label className= "grid-flow">
-                Command Post Location:
-                <div>
-                <input className="mod1-input" maxLength={3} placeholder = "10T" value = {gridMod1} onChange={(event) => {
-                    setGridMod1(event.target.value)}}/>
-                <input className="mod2-input" maxLength={2} placeholder = "ET" value = {gridMod2} onChange={(event) => {
-                    setGridMod2(event.target.value)}}/>
-                <input className="grid-input" maxLength={5} placeholder = "01234" value={cpInputText} onChange={(event) => {
-                    cpSetInputText(event.target.value)
+            </Col>
+        </FormGroup>
+        <FormGroup row>
+            <Label sm={4}>SP Date Time Group</Label>
+            <Col md={6}>
+                <Input input value={spInputText} onChange={(event) => {
+                                spSetInputText(event.target.value)
                 }}/>
-                <input className="grid-input" maxLength={5} placeholder = "56789" value = {cpInputTextUp} onChange={(event) => {
-                    cpSetInputTextUp(event.target.value)
+            </Col>
+        </FormGroup>
+        <FormGroup row>
+            <Label sm={4}>Estimated RP Date Time Group</Label>
+            <Col md={6}>
+                <Input input value={rpInputText} onChange={(event) => {
+                                     rpSetInputText(event.target.value)
                 }}/>
-                </div>
+            </Col>
+        </FormGroup>
 
-            </label>
-        </div>
-        <div>
-            <label className="label-row">
-                ETA to Continue Operations:
-                <input value={etaInputText} onChange={(event) => {
-                    etaSetInputText(event.target.value)
-                }}/>
-            </label>
-        </div>
-        <div>
-            <label className="label-row">
-                Sensitive Items Status:
-                <input value={sensitiveInputText} onChange={(event) => {
-                    sensitiveSetInputText(event.target.value)
-                }}/>
-            </label>
-        </div>
-        <div>
-            <label className="label-row">
-                One Sentence Narrative:
-                <input value={narInputText} onChange={(event) => {
-                    narSetInputText(event.target.value)
-                }}/>
-            </label>
-        </div>
-        <div>
-            <label className="label-row">
-                Contact Name and Phone #:
-                <input value={contactInputText} onChange={(event) => {
-                    contactSetInputText(event.target.value)
-                }}/>
-            </label>
-        </div>
-        <div>
-            <Button size = "sm" type="submit" onClick={(e)=> {
+        <FormGroup row>
+            <Label sm={4}>Command Post Location</Label>
+
+            <Col md={6}>
+                <div className= "form-row flex-nowrap">
+                <Input className="ml-1 col-sm-1" maxLength={3} placeholder = "10T" value = {gridMod1} onChange={(event) => {
+                                     setGridMod1(event.target.value)}}/>
+                <Input className="ml-4 col-sm-1" maxLength={2} placeholder = "ET" value = {gridMod2} onChange={(event) => {
+                                     setGridMod2(event.target.value)}}/>
+                <Input className="ml-4 col-sm-2" maxLength={5} placeholder = "01234" value={cpInputText} onChange={(event) => {
+                                        cpSetInputText(event.target.value)}}/>
+                <Input className="ml-4 col-sm-2" maxLength={5} placeholder = "56789" value = {cpInputTextUp} onChange={(event) => {
+                                     cpSetInputTextUp(event.target.value)}}/>
+                 </div>
+            </Col>
+
+        </FormGroup>
+
+        <FormGroup row>
+            <Label sm={4}>ETA to Continue Operations</Label>
+            <Col md={6}>
+                <Input value={etaInputText} onChange={(event) => {
+                                     etaSetInputText(event.target.value)}}/>
+            </Col>
+        </FormGroup>
+        <FormGroup row>
+            <Label sm={4}>Sensitive Item Status</Label>
+            <Col md={6}>
+                <Input value={sensitiveInputText} onChange={(event) => {
+                                     sensitiveSetInputText(event.target.value)}}/>
+            </Col>
+        </FormGroup>
+        <FormGroup row>
+            <Label sm={4}>One Sentence Narrative</Label>
+            <Col md={6}>
+                <Input value={narInputText} onChange={(event) => {
+                                     narSetInputText(event.target.value)}}/>
+            </Col>
+        </FormGroup>
+        <FormGroup row>
+            <Label sm={4}>Contact Name and Phone Number</Label>
+            <Col md={6}>
+                <Input value={contactInputText} onChange={(event) => {
+                                     contactSetInputText(event.target.value)}}/>
+            </Col>
+
+        </FormGroup>
+        <FormGroup>
+            <Button block size = "lg" type="submit" onClick={(e)=> {
                 e.preventDefault()
                 const Blue6formData = {
                     reportingDateInput : reportingDateInputText,
@@ -134,7 +129,9 @@ export const Blue6 = () => {
             }}>
                 submit
             </Button>
-        </div>
-        </div>
-    </form>
-    )}
+        </FormGroup>
+
+
+
+    </Form>
+)}

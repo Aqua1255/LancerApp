@@ -23,10 +23,10 @@ export const App = () => {
     return (
             <Router>
 
-                        <Navbar className="unclass-banner">
+                        <Navbar className="unclass-banner py-0">
                         <Navbar className="mx-auto unclass-banner" >Unclassified</Navbar>
                     </Navbar>
-                        <Navbar color="faded" light>
+                        <Navbar color="faded" light className="navbar-banner">
                             <NavbarBrand href="/" className="me-auto">Lancer Brigade Operations Center</NavbarBrand>
                             <NavbarToggler onClick={toggleNavbar} className="me-2" />
                             <Collapse isOpen={!collapsed} navbar>
