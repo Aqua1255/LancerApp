@@ -15,7 +15,7 @@ class AuthConfig : WebSecurityConfigurerAdapter() {
 
             http.oauth2Login()//.loginPage("/oauth2/authorization/sso")
 
-            http.oauth2Login().loginPage("/landing")
+//            http.oauth2Login().loginPage()
 
 //            http.csrf().disable()
             http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
