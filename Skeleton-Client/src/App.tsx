@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import {Homepage} from "./Components/Homepage";
 import {Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink} from "reactstrap";
+import {LandingPage} from "./Components/LandingPage";
 
 
 
@@ -42,6 +43,9 @@ export const App = () => {
                         </Navbar>
 
                     <Switch>
+                        <Route exact path="/landing">
+                            <LandingPage />
+                        </Route>
                         <Route exact path="/">
                             <Homepage />
                         </Route>

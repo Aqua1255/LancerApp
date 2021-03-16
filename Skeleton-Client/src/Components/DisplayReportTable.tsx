@@ -5,6 +5,7 @@ import {Blue7Data, deleteBlue7s, getBlue7s} from "./Blue7API";
 import Delete from "../Icons/Delete.svg"
 import {Table} from "reactstrap";
 
+
 export const DisplayReportTable = () => {
 
 const [displayReportBlue6, setDisplayReportBlue6] = useState<Blue6Data[]>([]);
@@ -86,7 +87,6 @@ return (
                     </td>
                     <td>
                         <button  type = "submit" onClick={(e) => {
-
                             deleteBlue6s(blueSixData.id!)
                             window.location.reload()
                         }}>
@@ -147,7 +147,6 @@ return (
                         </td>
                         <td>
                             <button  type = "submit" onClick={(e) => {
-
                                 deleteBlue7s(blueSevenData.id!)
                                 window.location.reload()
                             }}>

@@ -22,13 +22,9 @@
 /*}*/
 
 .background-container {
-    border-radius: 5px;
-    /*padding: 20px;*/
-    color: white;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    text-align: center;
+
+
+
 }
 
 .form-container{
@@ -140,4 +136,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/*body {*/
+/*    background: url("../Icons/background.svg") no-repeat center center fixed;*/
+
+/*}*/
+
+
+/*body {*/
+/*    background-image: url("/background.svg");*/
+/*    background-color: #cccccc;*/
+/*}*/
+
+.background-image{
+
 }
