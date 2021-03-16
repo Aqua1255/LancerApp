@@ -3,6 +3,7 @@ import {Blue6Data, deleteBlue6s, getBlue6s} from "./Blue6API";
 import './DisplayReportTable.css';
 import {Blue7Data, deleteBlue7s, getBlue7s} from "./Blue7API";
 import Delete from "../Icons/Delete.svg"
+import {Table} from "reactstrap";
 
 export const DisplayReportTable = () => {
 
@@ -32,23 +33,26 @@ useEffect(() => {
 }, []);
 
 return (
-<div>
-<div className='table-container'>
-    <div className='table-wrapper'>
+<div className="table-container">
         <h2>Active Training</h2>
-<table>
-    <div className= 'overflow'>
-    <tr>
-        <th>Reporting Date Time Group</th>
-        <th>Unit & Call Sign</th>
-        <th>SP Date Time Group</th>
-        <th>Estimated RP Date Time Group</th>
-        <th>Command Post Location</th>
-        <th>ETA to Continue Operations</th>
-        <th>Sensitive Item Status</th>
-        <th>One Sentence Narrative</th>
-        <th>Contact Name and Phone #</th>
-    </tr>
+
+    <Table className="table-center" striped>
+        <div className="overflow">
+
+        <thead>
+        <tr>
+            <th>Reporting Date Time Group</th>
+            <th>Unit and Call Sign</th>
+            <th>SP Date Time Group</th>
+            <th>Estimated Date Time Group</th>
+            <th>Command Post Location</th>
+            <th>ETA to Continue Operations</th>
+            <th>Sensitive Item Status</th>
+            <th>One Sentence Narrative</th>
+            <th>Contact Name and Phone #</th>
+        </tr>
+
+        <tbody>
         {displayReportBlue6.map((blueSixData) => {
             console.log('Here is my current Blue6 id ', blueSixData.id)
             return (
@@ -94,27 +98,31 @@ return (
             )
         })  }
 
-    </div>
-</table>
-    </div>
+        </tbody>
+        </thead>
+        </div>
 
-    <div className="table-wrapper">
-        <h2>Completed Training</h2>
-     <table>
-        <div className= 'overflow'>
-            <tr>
-                <th>Reporting Date Time Group</th>
-                <th>Unit & Call Sign</th>
-                <th>RP Date Time Group</th>
-                <th>Command Post Location</th>
-                <th>Accidents or SIGACTs</th>
-                <th>ETA to Continue Operations</th>
-                <th>Sensitive Item Status</th>
-            </tr>
-            {displayReportBlue7.map((blueSevenData) => {
-                console.log('Here is my Blue7 data ', blueSevenData)
-                console.log('Here is my current Blue7 id ', blueSevenData.id)
-                return (
+    </Table>
+
+    <h2>Completed Training</h2>
+
+    <Table striped className="table-center">
+        <div className="overflow">
+            <thead>
+                <tr>
+                    <th>Reporting Date Time Group</th>
+                    <th>Unit and Call Sign</th>
+                    <th>RP Date Time Group</th>
+                    <th>Command Post Location</th>
+                    <th>Accidents or SIGACTs</th>
+                    <th>ETA to Continue Operations</th>
+                    <th>Sensitive Item Status</th>
+                </tr>
+                <tbody>
+                    {displayReportBlue7.map((blueSevenData) => {
+                        console.log('Here is my Blue7 data ', blueSevenData)
+                    console.log('Here is my current Blue7 id ', blueSevenData.id)
+                    return (
                     <tr>
                         <td>
                             {blueSevenData.checkOutReportingDateInput}
@@ -150,20 +158,13 @@ return (
                     </tr>
                 )
             })}
-
+            </tbody>
+        </thead>
         </div>
-
-    </table>
-    </div>
+    </Table></div>
 
 
-</div>
-<div className= "tableContent">
-
-</div>
-</div>)
-
-}
+)}
 
 
 

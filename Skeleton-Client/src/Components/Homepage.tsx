@@ -6,7 +6,7 @@ import {BaseMap} from "./BaseMap";
 export const Homepage = () => {
     return(
 
-<div className="background-container">
+<div>
     <img src={Logo} className="App-logo" alt="logo"/>
     <div className="display-table">
         <DisplayReportTable/>

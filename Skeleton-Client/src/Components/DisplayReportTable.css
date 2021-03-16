@@ -31,7 +31,7 @@ table{
 
 td,th{
     font: 1em sans-serif;
-    border: 1px solid #FF0000;
+    /*border: 1px solid #FF0000;*/
     padding: 0.5rem;
     text-align: left;
 
@@ -70,4 +70,11 @@ h2{
     width: 80vw;
     overflow-x:scroll;
     padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.table-center{
+    display: flex;
+    justify-content: center;
 }
