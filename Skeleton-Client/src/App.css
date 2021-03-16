@@ -51,16 +51,16 @@
   color: white;
 }
 .mod1-input{
-  width: 22px;
+  width: 35px;
   margin-left: 2px;
 }
 .mod2-input{
-  width: 18px;
+  width: 30px;
   margin-left:2px;
 }
 
 .grid-input{
-  width: 39px;
+  width: 53px;
   margin-left: 2px;
 }
 .App-link {
@@ -85,8 +85,7 @@
   /* Uniform text field size */
   /*box-sizing: border-box;*/
 
-  /* Match form field borders */
-  border: 1px solid #FF0000;
+
 }
 
 .grid-flow{
@@ -103,7 +102,7 @@
   /*box-sizing: border-box;*/
 
   /* Match form field borders */
-  border: 1px solid #FF0000;
+
 }
 
 /*.grid-container{*/
@@ -133,4 +132,14 @@
 
 .input-button{
   width: 100px;
+}
+
+
+.unclass-banner{
+  color: white;
+  background-color: #28a745;
+}
+
+.navbar-banner{
+  background-color: #c8cbcf;
 }

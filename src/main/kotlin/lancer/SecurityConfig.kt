@@ -12,7 +12,11 @@ class AuthConfig : WebSecurityConfigurerAdapter() {
     override fun configure(http: HttpSecurity) {
         super.configure(http)
             http.httpBasic().disable().formLogin().disable()
+<<<<<<< HEAD
             http.oauth2Login()//.loginPage("/oauth2/authorization/sso")
+=======
+            http.oauth2Login().loginPage("/landing")
+>>>>>>> wip/routes-switches
 //            http.csrf().disable()
             http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
 

@@ -15,3 +15,153 @@
     monospace;
 }
 
+:root {
+  --iron: #474a4c;
+  --powder: #f7f7f7;
+  --tin: #a3a4a3;
+  --river-rock: #4f6d7a;
+  --sockeye: #e38470;
+  --mint: #94c9a9;
+  --maize: #eac435;
+  --backdrop: rgba(28, 29, 30, 0.8);
+  /* tin w/ 0.5 alpha */
+  --subtask-background: rgba(163, 164, 163, 0.5);
+
+  --spacing-Xsmall: 7px;
+  --spacing-small: 15px;
+  --spacing-medium: 30px;
+  --spacing-large: 60px;
+  --spacing-Xlarge: 90px;
+
+  --font-size-small: 0.75rem;
+  --font-size-medium: 1.25rem;
+  --font-size-large: 1.5rem;
+  --font-size-Xlarge: 1.75rem;
+
+  --icon-font-size-large: 4rem;
+
+  --nav-bar-height: 54px;
+  --unclass-header-height: 36px;
+}
+
+/* Set to border-box box-sizing
+This helps prevent padding impacting the total width of an element
+https://css-tricks.com/box-sizing/
+ */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+/* SVGs should be excluded from the above rule of using border-box box-sizing */
+svg {
+  box-sizing: initial;
+}
+
+/* Make sure content doesn't end up off screen */
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+body {
+  background-color: var(--powder);
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--iron);
+}
+
+h1,
+legend {
+  font-size: var(--font-size-large);
+  font-weight: normal;
+}
+
+h2 {
+  font-size: var(--font-size-medium);
+  font-weight: bold;
+  margin: 0;
+}
+
+a {
+  color: var(--river-rock);
+}
+
+a.text-button {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--iron);
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.material-icons-round {
+  font-family: 'Material Icons Round';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}

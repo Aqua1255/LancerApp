@@ -1,66 +1,63 @@
-// @ts-ignore
+
 import React, {useState} from 'react';
-import Logo from "./Logo.svg";
 import './index.css'
 import './App.css'
-import {Blue6} from "./Blue6";
-import {Blue7} from "./Blue7";
-import {DisplayReportTable} from "./DisplayReportTable";
-import {BaseMap} from "./BaseMap";
+import {Blue6} from "./Components/Blue6";
+import {Blue7} from "./Components/Blue7";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route, Link
+} from "react-router-dom";
+import {Homepage} from "./Components/Homepage";
+import {Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink} from "reactstrap";
+import {LandingPage} from "./Components/LandingPage";
+
 
 
 
 export const App = () => {
 
-//Hook for Blue6/Blue7 Input Selection
-    const [reportSelection, setReportSelection] = useState<number>(0);
+    const [collapsed, setCollapsed] = useState(true);
 
-
+    const toggleNavbar = () => setCollapsed(!collapsed);
     return (
+            <Router>
 
-        <div className="background-container">
-            <header>
-                <h1 className="body">
-                    Lancer Brigade Operations Center
-                </h1>
-            </header>
-            <img src={Logo} className="App-logo" alt="logo"/>
+                        <Navbar className="unclass-banner py-0">
+                        <Navbar className="mx-auto unclass-banner" >Unclassified</Navbar>
+                    </Navbar>
+                        <Navbar color="faded" light className="navbar-banner">
+                            <NavbarBrand href="/" className="me-auto">Lancer Brigade Ops</NavbarBrand>
+                            <NavbarToggler onClick={toggleNavbar} className="me-2" />
+                            <Collapse isOpen={!collapsed} navbar>
+                                <Nav navbar>
+                                    <NavItem>
+                                        <Link to="/submit-blue6">Initiate Training Event with Blue 6</Link>
+                                    </NavItem>
+                                    <NavItem>
+                                        <Link to="/submit-blue7">Closeout Training Event with Blue 7</Link>
+                                    </NavItem>
+                                </Nav>
+                            </Collapse>
+                        </Navbar>
 
-            <div className="form-container">
-                {reportSelection === 1 && <Blue6/>}
+                    <Switch>
+                        <Route exact path="/landing">
+                            <LandingPage />
+                        </Route>
+                        <Route exact path="/">
+                            <Homepage />
+                        </Route>
+                        <Route exact path="/submit-blue6">
+                            <Blue6 />
+                        </Route>
+                        <Route exact path="/submit-blue7">
+                            <Blue7 />
+                        </Route>
+                    </Switch>
 
-                {reportSelection === 2 && <Blue7/>}
-
-
-
-                {/*{reportSelection === 1 ? <Blue6/> :reportSelection ===2 ? <Blue7/> : null}*/}
-                {/*<>*/}
-                {/*    <button onClick={() =>setReportSelection(1)}>Initiate Training Event w/ Blue 6</button>*/}
-                {/*    <button onClick={() => setReportSelection(2)}>Close-Out Training Event w/ Blue 7</button>*/}
-                {/* </>*/}
-                {/*<button onClick={() => setReportSelection(0)}>Main Menu</button>*/}
-
-            </div>
-
-            <div className="form-container">{reportSelection === 0 ?
-                <>
-                    <button className="input-button" onClick={() => setReportSelection(1)}>Initiate w/ Blue 6</button>
-                    <button className="input-button" onClick={() => setReportSelection(2)}>Close-Out w/ Blue 7</button>
-                </>
-                :
-                <button onClick={() => setReportSelection(0)} className="cancel-button">cancel</button>}
-            </div>
-
-            {reportSelection === 0 && (
-                <div className="display-table">
-                    <DisplayReportTable/>
-                </div>
-            )
-            }
-            <div className={"display-table"}>
-                <BaseMap/>
-            </div>
-        </div>
+            </Router>
 
 
     )
