@@ -43,12 +43,13 @@ export const App = () => {
                         </Navbar>
 
                     <Switch>
-                        <Route exact path="/landing">
-                            <LandingPage />
-                        </Route>
+
                         <Route exact path="/">
                             <Homepage />
                         </Route>
+                        <Route exact path="/landing">
+                        <LandingPage />
+                    </Route>
                         <Route exact path="/submit-blue6">
                             <Blue6 />
                         </Route>
