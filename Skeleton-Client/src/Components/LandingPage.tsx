@@ -1,17 +1,8 @@
 import React, {useState} from "react";
+import { Redirect } from "react-router-dom";
 import {Button} from "reactstrap";
 
 
-const MainEntryPoint = () => {
-    return (
-        <>
-            <h1 className="mission-statement">MySquad will help keep your whole squad organized and on track.</h1>
-            <a className="button login-button" role="button" href="/oauth2/authorization/sso">
-                Login
-            </a>
-        </>
-    );
-};
 
 export const LandingPage = () => {
     const [userAcceptTOS, setUserAcceptTOS] = useState(false);
@@ -21,12 +12,18 @@ export const LandingPage = () => {
     };
 
     return (
-        <div className="landing">
+        <div>
             {userAcceptTOS ? (
-                <MainEntryPoint />
+                <Redirect to={"/"}></Redirect>
             ) : (
-                <div className="terms-and-conditions">
-                    <div className="eula">
+                <div style={{
+                    display: "flex",
+                    flexDirection: "column",
+
+                }}>
+                    <div  style={{
+                        alignItems: "center"
+                    }}>
                         <h1>Terms and Conditions</h1>
                         <p>
                             You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use
@@ -55,11 +52,12 @@ export const LandingPage = () => {
                                 Such communications and work product are private and confidential.
                             </li>
                         </ul>
-                        <p className="see-details">See User Agreement for details.</p>
                     </div>
-                    <Button className="accept-terms" onClick={handleAcceptClick}>
+
+                    <Button onClick={handleAcceptClick} size="med">
                         Accept
                     </Button>
+
                 </div>
             )}
         </div>
