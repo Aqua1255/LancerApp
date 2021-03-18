@@ -34,6 +34,18 @@ export const deleteBlue6s = async(blue6Id:number) => {
         throw new Error(e.message)
     }
 }
+
+export const archiveBlue6s = async(blue6Id:number) => {
+    try{
+        console.log("was blue6 archived")
+        await axios.put(`/api/blue6s/${blue6Id}`)
+
+    }catch(e){
+        console.log(e.message)
+        throw new Error(e.message)
+    }
+}
+
 export interface Blue6Data {
 
     id?: number;
@@ -46,4 +58,5 @@ export interface Blue6Data {
     siInput : string;
     narInput : string;
     pocInput : string;
+    archived : boolean;
 }

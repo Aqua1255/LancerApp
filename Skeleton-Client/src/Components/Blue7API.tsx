@@ -41,5 +41,6 @@ export interface Blue7Data {
     accidentInput: string;
     checkOutEtaInput: string;
     checkOutSiInput: string;
+    archived: boolean;
 
 }

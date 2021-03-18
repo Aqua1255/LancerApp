@@ -20,7 +20,7 @@ data class Blue7(
         val accidentInput: String = "",
         val checkOutEtaInput: String = "",
         val checkOutSiInput: String = "",
-
+        val archived: Boolean = false
 
 ) : Serializable {
 //        var createdBy: String = SecurityContextHolder.getContext().authentication.name

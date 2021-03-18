@@ -5,7 +5,7 @@ import {sendBlue7s} from "./Blue7API";
 import {useHistory} from "react-router-dom";
 import {Button, Col, Form, FormGroup, Input} from "reactstrap";
 import {Label} from "reactstrap/lib";
-import {sendBlue6s} from "./Blue6API";
+
 
 export const Blue7 = () => {
     const history = useHistory();
@@ -19,6 +19,7 @@ export const Blue7 = () => {
     const[accidentInputText, accidentSetInputText] = useState<string>("")
     const[checkOutEtaInputText, checkOutEtaSetInputText] = useState<string>("")
     const[checkOutSiInputText, checkOutSiSetInputText] = useState<string>("")
+    const[archiveSelect, setArchiveSelect] = useState<boolean>(false)
 
     return (
     //     <form className="background-container">
@@ -141,6 +142,7 @@ export const Blue7 = () => {
                         accidentInput: accidentInputText,
                         checkOutEtaInput: checkOutEtaInputText,
                         checkOutSiInput: checkOutSiInputText,
+                        archived: archiveSelect
                     }
                     sendBlue7s(Blue7formData)
                     history.push("/")

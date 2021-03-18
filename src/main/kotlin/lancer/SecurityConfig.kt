@@ -26,7 +26,7 @@ class AuthConfig : WebSecurityConfigurerAdapter() {
 
             http.oauth2Login().defaultSuccessUrl("/landing", true)
             http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-
+//            http.csrf().disable()
     }
 }
 

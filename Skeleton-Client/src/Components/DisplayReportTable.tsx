@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from "react";
-import {Blue6Data, deleteBlue6s, getBlue6s} from "./Blue6API";
+import {archiveBlue6s, Blue6Data, deleteBlue6s, getBlue6s} from "./Blue6API";
 import './DisplayReportTable.css';
 import {Blue7Data, deleteBlue7s, getBlue7s} from "./Blue7API";
 import Delete from "../Icons/Delete.svg"
 import {Table} from "reactstrap";
+import archive from "../Icons/archive.svg"
 
 
 export const DisplayReportTable = () => {
@@ -51,6 +52,7 @@ return (
             <th>Sensitive Item Status</th>
             <th>One Sentence Narrative</th>
             <th>Contact Name and Phone #</th>
+            <th>Archive Status</th>
         </tr>
 
         <tbody>
@@ -86,11 +88,20 @@ return (
                         {blueSixData.pocInput}
                     </td>
                     <td>
+                        {blueSixData.archived}
+                    </td>
+                    <td>
                         <button  type = "submit" onClick={(e) => {
                             deleteBlue6s(blueSixData.id!)
                             window.location.reload()
                         }}>
                             <img alt = "delete" src={Delete}/>
+                        </button>
+                        <button type = "submit" onClick={() => {
+                            archiveBlue6s(blueSixData.id!)
+                            window.location.reload()
+                        }}>
+                            <img alt = "archive" src={archive}/>
                         </button>
                     </td>
 

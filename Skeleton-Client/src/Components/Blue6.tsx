@@ -20,6 +20,7 @@ export const Blue6 = () => {
     const [sensitiveInputText, sensitiveSetInputText] = useState<string>("")
     const [narInputText, narSetInputText] = useState<string>("")
     const [contactInputText, contactSetInputText] = useState<string>("")
+    const[archivedSelect, setArchivedSelect] = useState<boolean>(false)
 
 
 
@@ -118,7 +119,9 @@ export const Blue6 = () => {
                     etaInput : etaInputText,
                     siInput : sensitiveInputText,
                     narInput : narInputText,
-                    pocInput: contactInputText
+                    pocInput: contactInputText,
+                    archived: archivedSelect
+
                 }
 
                 sendBlue6s(Blue6formData).then( () => {
