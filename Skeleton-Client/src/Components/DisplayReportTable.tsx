@@ -92,15 +92,17 @@ return (
                     </td>
                     <td>
                         <button  type = "submit" onClick={(e) => {
-                            deleteBlue6s(blueSixData.id!)
-                            window.location.reload()
+                            deleteBlue6s(blueSixData.id!).then(() => {window.location.reload()})
+
                         }}>
                             <img alt = "delete" src={Delete}/>
                         </button>
                         <button type = "submit" onClick={() => {
                             blueSixData.archived=true
-                            archiveBlue6s(blueSixData).then(() =>{})
+                            archiveBlue6s(blueSixData).then(() =>{window.location.reload()})
+                            // archiveBlue6s(blueSixData)
                             // window.location.reload()
+
                         }}>
                             <img alt = "archive" src={archive}/>
                         </button>

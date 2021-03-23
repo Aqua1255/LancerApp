@@ -23,8 +23,7 @@ data class Blue7(
         val archived: Boolean = false
 
 ) : Serializable {
-//        var createdBy: String = SecurityContextHolder.getContext().authentication.name
-//        @ManyToOne
+
         @Column(name = "created_by", updatable = false)
         @CreatedBy
         lateinit var createdBy: String

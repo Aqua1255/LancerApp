@@ -30,10 +30,6 @@ data class Blue6(
         @CreatedBy
         lateinit var createdBy: String
 
-
-//        @ManyToOne
-//        @Column(name = "created_by", updatable = false)
-//        var createdBy: String = SecurityContextHolder.getContext().authentication.name
 }
 
 
