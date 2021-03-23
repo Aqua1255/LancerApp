@@ -26,10 +26,10 @@ data class Blue6(
         val archived: Boolean = false
 
 ): Serializable {
-        @Column(name = "created_by", updatable = false)
-        @CreatedBy
-        lateinit var createdBy: String
 
+        @Column(name = "created_by", updatable = false, nullable = false)
+        @CreatedBy
+        var createdBy: String? = null
 }
 
 

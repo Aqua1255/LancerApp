@@ -99,9 +99,19 @@ return (
                         </button>
                         <button type = "submit" onClick={() => {
                             blueSixData.archived=true
-                            archiveBlue6s(blueSixData).then(() =>{window.location.reload()})
+                            archiveBlue6s({id: blueSixData.id, archived: true }).then(() =>{window.location.reload()})
                             // archiveBlue6s(blueSixData)
                             // window.location.reload()
+
+
+
+                            // val profileInfoToSave = existingProfileInformation?.let {
+                            //     updatedProfileInfo.copy(id = it.id).apply {
+                            //         createdBy = it.createdBy
+                            //         createdDate = it.createdDate
+                            //         lastModifiedDate = it.lastModifiedDate
+                            //     }
+                            // } ?: updatedProfileInfo
 
                         }}>
                             <img alt = "archive" src={archive}/>
