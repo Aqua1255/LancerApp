@@ -35,10 +35,10 @@ export const deleteBlue6s = async(blue6Id:number) => {
     }
 }
 
-export const archiveBlue6s = async(blue6Id:number) => {
+export const archiveBlue6s = async(blue6SentFormData: Blue6Data) => {
     try{
         console.log("was blue6 archived")
-        await axios.put(`/api/blue6s/${blue6Id}`)
+        await axios.patch(`/api/blue6s/${blue6SentFormData.id}`, blue6SentFormData)
 
     }catch(e){
         console.log(e.message)

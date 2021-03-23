@@ -98,8 +98,9 @@ return (
                             <img alt = "delete" src={Delete}/>
                         </button>
                         <button type = "submit" onClick={() => {
-                            archiveBlue6s(blueSixData.id!)
-                            window.location.reload()
+                            blueSixData.archived=true
+                            archiveBlue6s(blueSixData).then(() =>{})
+                            // window.location.reload()
                         }}>
                             <img alt = "archive" src={archive}/>
                         </button>
