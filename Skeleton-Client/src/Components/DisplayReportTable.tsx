@@ -56,7 +56,12 @@ return (
         </tr>
 
         <tbody>
-        {displayReportBlue6.map((blueSixData) => {
+        {displayReportBlue6.filter(i => i.archived === false).map((blueSixData) => {
+
+
+
+
+        {/*{displayReportBlue6.map((blueSixData) => {*/}
             console.log('Here is my current Blue6 id ', blueSixData.id)
             return (
                 <tr>
