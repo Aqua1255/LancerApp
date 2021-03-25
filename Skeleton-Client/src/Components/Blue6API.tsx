@@ -11,8 +11,6 @@ export const getBlue6s = async(): Promise<Blue6Data[]> => {
     }
 }
 
-//Send data to db
-
 export const sendBlue6s = async(blue6SentFormData: Blue6Data) => {
     try {
         console.log("did I make it")

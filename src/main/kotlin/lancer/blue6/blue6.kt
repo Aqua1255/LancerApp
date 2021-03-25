@@ -1,9 +1,7 @@
 package lancer.blue6
 
-import lancer.blue7.Blue7
 import org.springframework.data.annotation.CreatedBy
 import org.springframework.data.jpa.domain.support.AuditingEntityListener
-import org.springframework.security.core.context.SecurityContextHolder
 import java.io.Serializable
 import javax.persistence.*
 

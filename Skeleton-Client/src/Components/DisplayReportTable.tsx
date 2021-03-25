@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from "react";
-import {archiveBlue6s, Blue6Data, deleteBlue6s, getBlue6s} from "./Blue6API";
+import {archiveBlue6s, Blue6Data, getBlue6s} from "./Blue6API";
 import './DisplayReportTable.css';
-import {Blue7Data, deleteBlue7s, getBlue7s} from "./Blue7API";
-import Delete from "../Icons/Delete.svg"
+import {archiveBlue7s, Blue7Data, getBlue7s} from "./Blue7API";
 import {Table} from "reactstrap";
 import archive from "../Icons/archive.svg"
 
@@ -52,16 +51,11 @@ return (
             <th>Sensitive Item Status</th>
             <th>One Sentence Narrative</th>
             <th>Contact Name and Phone #</th>
-            <th>Archive Status</th>
         </tr>
 
         <tbody>
         {displayReportBlue6.filter(i => i.archived === false).map((blueSixData) => {
 
-
-
-
-        {/*{displayReportBlue6.map((blueSixData) => {*/}
             console.log('Here is my current Blue6 id ', blueSixData.id)
             return (
                 <tr>
@@ -96,30 +90,16 @@ return (
                         {blueSixData.archived}
                     </td>
                     <td>
-                        <button  type = "submit" onClick={(e) => {
-                            deleteBlue6s(blueSixData.id!).then(() => {window.location.reload()})
 
-                        }}>
-                            <img alt = "delete" src={Delete}/>
-                        </button>
                         <button type = "submit" onClick={() => {
                             blueSixData.archived=true
                             archiveBlue6s({id: blueSixData.id, archived: true }).then(() =>{window.location.reload()})
-                            // archiveBlue6s(blueSixData)
-                            // window.location.reload()
-
-
-
-                            // val profileInfoToSave = existingProfileInformation?.let {
-                            //     updatedProfileInfo.copy(id = it.id).apply {
-                            //         createdBy = it.createdBy
-                            //         createdDate = it.createdDate
-                            //         lastModifiedDate = it.lastModifiedDate
-                            //     }
-                            // } ?: updatedProfileInfo
 
                         }}>
-                            <img alt = "archive" src={archive}/>
+                            <img alt = "archive" src={archive} style={{
+                                width: "15px",
+                                paddingTop: "4px"
+                            }}/>
                         </button>
                     </td>
 
@@ -148,7 +128,7 @@ return (
                     <th>Sensitive Item Status</th>
                 </tr>
                 <tbody>
-                    {displayReportBlue7.map((blueSevenData) => {
+                {displayReportBlue7.filter(i => i.archived === false).map((blueSevenData) => {
                         console.log('Here is my Blue7 data ', blueSevenData)
                     console.log('Here is my current Blue7 id ', blueSevenData.id)
                     return (
@@ -175,12 +155,18 @@ return (
                             {blueSevenData.checkOutSiInput}
                         </td>
                         <td>
-                            <button  type = "submit" onClick={(e) => {
-                                deleteBlue7s(blueSevenData.id!)
-                                window.location.reload()
+                            <button type = "submit" onClick={() => {
+                                blueSevenData.archived=true
+                                archiveBlue7s({id: blueSevenData.id, archived: true }).then(() =>{window.location.reload()})
+
                             }}>
-                                <img alt = "delete" src={Delete}/>
+                                <img alt = "archive" src={archive} style={{
+                                    width: "15px",
+                                    paddingTop: "4px"
+                                }}/>
                             </button>
+
+
                         </td>
 
                     </tr>

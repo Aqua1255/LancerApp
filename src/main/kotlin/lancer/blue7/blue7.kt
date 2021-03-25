@@ -2,13 +2,11 @@ package lancer.blue7
 
 import org.springframework.data.annotation.CreatedBy
 import org.springframework.data.jpa.domain.support.AuditingEntityListener
-import org.springframework.security.core.context.SecurityContextHolder
 import java.io.Serializable
 import javax.persistence.*
 
 @Entity
 @EntityListeners(AuditingEntityListener::class)
-//@EntityListeners(AuditingEntityListener::class)
 data class Blue7(
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Id
@@ -24,7 +22,7 @@ data class Blue7(
 
 ) : Serializable {
 
-        @Column(name = "created_by", updatable = false)
+        @Column(name = "created_by", updatable = false, nullable = false)
         @CreatedBy
-        lateinit var createdBy: String
+        var createdBy: String? = null
 }

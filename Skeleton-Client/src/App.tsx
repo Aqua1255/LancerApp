@@ -10,8 +10,9 @@ import {
     Route, Link
 } from "react-router-dom";
 import {Homepage} from "./Components/Homepage";
-import {Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink} from "reactstrap";
+import {Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem} from "reactstrap";
 import {LandingPage} from "./Components/LandingPage";
+import {ArchivePage} from "./Components/ArchivePage";
 
 
 
@@ -38,6 +39,9 @@ export const App = () => {
                                     <NavItem>
                                         <Link to="/submit-blue7">Closeout Training Event with Blue 7</Link>
                                     </NavItem>
+                                    <NavItem>
+                                        <Link to="/archive">Training Event Archive</Link>
+                                    </NavItem>
                                 </Nav>
                             </Collapse>
                         </Navbar>
@@ -54,6 +58,9 @@ export const App = () => {
                         </Route>
                         <Route exact path="/submit-blue7">
                             <Blue7 />
+                        </Route>
+                        <Route exact path="/archive">
+                            <ArchivePage />
                         </Route>
                     </Switch>
 

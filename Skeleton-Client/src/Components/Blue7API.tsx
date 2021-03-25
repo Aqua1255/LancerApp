@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 export const getBlue7s = async(): Promise<Blue7Data[]> => {
     try{console.log("did I make it")
         const response = await axios.get("/api/blue7s")
@@ -20,6 +21,18 @@ export const sendBlue7s = async(blue7SentFormData: Blue7Data) => {
         throw new Error(e.message)
     }
 }
+
+export const archiveBlue7s = async(blue7SentFormData: Partial<Blue7Data>) => {
+    try{
+        console.log("was blue7 archived")
+        await axios.patch(`/api/blue7s/${blue7SentFormData.id}`, blue7SentFormData)
+
+    }catch(e){
+        console.log(e.message)
+        throw new Error(e.message)
+    }
+}
+
 
 export const deleteBlue7s = async(blue7Id:number) => {
     try{

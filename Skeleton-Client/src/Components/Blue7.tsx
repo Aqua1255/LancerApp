@@ -95,8 +95,8 @@ export const Blue7 = () => {
             <FormGroup row>
                 <Label sm={4}>RP Date Time Group</Label>
                 <Col md={6}>
-                    <Input input value={checkOutReportingDateInputText} onChange={(event) => {
-                        checkOutReportingDateSetInputText(event.target.value)
+                    <Input input value={checkOutRpDateInputText} onChange={(event) => {
+                        checkOutRpDateSetInputText(event.target.value)
                     }}/>
                 </Col>
             </FormGroup>
@@ -144,8 +144,9 @@ export const Blue7 = () => {
                         checkOutSiInput: checkOutSiInputText,
                         archived: archiveSelect
                     }
-                    sendBlue7s(Blue7formData)
-                    history.push("/")
+                    sendBlue7s(Blue7formData).then( () => {
+                        history.push("/")
+                    })
                 }
                 }>submit</Button>
             </FormGroup>
