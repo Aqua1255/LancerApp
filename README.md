@@ -16,8 +16,8 @@ for reporting, which makes communication tedious. Why not make a battle tracking
 ## Milestones
 - [X] Front end deployment
 - [X] Back end deployment
-- [ ] Spring Security
+- [X] Spring Security
 - [ ] End to End testing
-- [ ] CI/CD
-- [ ] SSO
-- [ ] Integrate with third party systems
+- [X] CI/CD
+- [X] OATH2 Sandbox
+- [X] Integrate with third party system - Login.gov
